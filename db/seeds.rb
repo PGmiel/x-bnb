@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Category.delete_all
+Activity.delete_all
+User.delete_all
+
+
+Category.create( name: "Water" )
+Category.create( name: "Nature" )
+Category.create( name: "Running" )
+Category.create( name: "Motor" )
+Category.create( name: "Climbing" )
+Category.create( name: "Mountain" )
+Category.create( name: "Cycling" )
+Category.create( name: "City" )
+
+
+5.times do
+  @user = User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email
+    )
+end
+
+
+20.times do
+  @activity = Activity.create(
+    name: ["skiing", "kitesuring", "climbing", "via-ferrata", "thriathlon", "bike", "roller-blading", "wakeboarding", "surfing", "skateboarding", "street-luge", "kayaking"].sample,
+    description: Faker::Lorem.sentence,
+    price: rand(10..95),
+    address: "#{Faker::Address.city}, #{Faker::Address.street_address}",
+    user: User.all.sample
+    )
+  @activity.save!
+end
