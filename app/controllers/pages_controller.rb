@@ -6,5 +6,6 @@ class PagesController < ApplicationController
   def host
     @categories = Category.all
     @reviews = Review.all
+    @activities = Activity.all
   end
 end
