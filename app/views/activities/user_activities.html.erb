@@ -2,7 +2,7 @@
   <h2>My activities</h2>
   <ul>
     <% current_user.activities.each do |activity| %>
-      <li><%= link_to activity.name, activity_path(activity) %> by: <%= activity.user.first_name %></li>
+      <li><%= link_to activity.name, activity_path(activity) %> </li>
     <% end %>
   </ul>
   <%= link_to "Back to Home page", root_path, class: "btn btn-primary" %>
