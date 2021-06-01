@@ -12,4 +12,4 @@ class User < ApplicationRecord
 end
 
 #current_user.seller?
-  # to make paths accesssbile oly for user with activities on sold
+# to make paths accesssbile oly for user with activities on sold

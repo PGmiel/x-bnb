@@ -16,32 +16,17 @@
     <h1>Reviews from our users!</h1>
   </div>
     <div class="row">
+      <%= @reviews.all.sample(4).each do |review| %>
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card">
           <div class="comment-section">
-              <h2>XX says:</h2>
-              <h2><%= @reviews.sample.content  %></h2>
+              <h2><%= review.user.first_name %> says:</h2>
+              <h2><%= review.content %></h2>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="card">
-          <div class="comment-section">
-              <h2>XX says:</h2>
-              <h2><%= @reviews.sample.content  %></h2>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-6">
-        <div class="card">
-          <div class="comment-section">
-              <h2>XX says:</h2>
-              <h2><%= @reviews.sample.content  %></h2>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
+     <% end %>
+  </div>
 <div class="categories">
   <div class="categories-title">
     <h1>Explore the possibilities</h1>
