@@ -45,12 +45,12 @@ ActiveRecord::Schema.define(version: 2021_05_31_152239) do
   end
 
   create_table "category_activities", force: :cascade do |t|
-    t.bigint "categories_id", null: false
-    t.bigint "activities_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["activities_id"], name: "index_category_activities_on_activities_id"
-    t.index ["categories_id"], name: "index_category_activities_on_categories_id"
+    t.index ["activity_id"], name: "index_category_activities_on_activity_id"
+    t.index ["category_id"], name: "index_category_activities_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,6 +70,6 @@ ActiveRecord::Schema.define(version: 2021_05_31_152239) do
   add_foreign_key "activities", "users"
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
-  add_foreign_key "category_activities", "activities", column: "activities_id"
-  add_foreign_key "category_activities", "categories", column: "categories_id"
+  add_foreign_key "category_activities", "activities"
+  add_foreign_key "category_activities", "categories"
 end

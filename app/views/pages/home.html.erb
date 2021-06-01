@@ -38,87 +38,18 @@
     <h1>Explore the possibilities</h1>
   </div>
   <div class="row">
+  <% @categories.each do |category| %>
     <div class="col-lg-3 col-md-6 col-sm-6">
       <div class="card">
         <%= image_tag "bike.jpg" %>
         <div class="card-infos">
           <div>
-            <h2>Mountain bike</h2>
+            <h2><%= link_to category.name, category_path(category)  %></h2>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="card">
-        <%= image_tag "ski.jpg" %>
-        <div class="card-infos">
-          <div>
-            <h2>Ski and snowboard</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="card">
-        <%= image_tag "surf.jpg" %>
-        <div class="card-infos">
-          <div>
-            <h2>Surf</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="card">
-        <%= image_tag "ferrari.jpg" %>
-        <div class="card-infos">
-          <div>
-            <h2>Rent your favorite car</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="card">
-        <%= image_tag "ferrari.jpg" %>
-        <div class="card-infos">
-          <div>
-            <h2>Title here</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="card">
-        <%= image_tag "surf.jpg" %>
-        <div class="card-infos">
-          <div>
-            <h2>Title here</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="card">
-        <%= image_tag "ski.jpg" %>
-        <div class="card-infos">
-          <div>
-            <h2>Title here</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
-      <div class="card">
-        <%= image_tag "bike.jpg" %>
-        <div class="card-infos">
-          <div>
-            <h2>Title here</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
 <div class="host-container">
   <div class="become-host" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "become_host.jpg" %>);">

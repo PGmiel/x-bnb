@@ -9,24 +9,26 @@ Category.delete_all
 Activity.delete_all
 User.delete_all
 
-
-Category.create( name: "Water" )
-Category.create( name: "Nature" )
-Category.create( name: "Running" )
-Category.create( name: "Motor" )
-Category.create( name: "Climbing" )
-Category.create( name: "Mountain" )
-Category.create( name: "Cycling" )
+categories = [
+Category.create( name: "Water" ),
+Category.create( name: "Nature" ),
+Category.create( name: "Running" ),
+Category.create( name: "Motor" ),
+Category.create( name: "Climbing" ),
+Category.create( name: "Mountain" ),
+Category.create( name: "Cycling" ),
 Category.create( name: "City" )
-
+]
 
 5.times do
-  @user = User.create(
+  @user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    email: Faker::Internet.email
+    email: Faker::Internet.email,
+    password: "123123"
     )
 end
+
 
 
 20.times do
@@ -38,4 +40,5 @@ end
     user: User.all.sample
     )
   @activity.save!
+  @activity.categories = categories.sample(3)
 end
