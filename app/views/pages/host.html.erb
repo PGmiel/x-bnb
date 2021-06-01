@@ -19,14 +19,17 @@
       <%= @reviews.all.sample(4).each do |review| %>
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card">
+          <div class="comment-image">
+          </div>
           <div class="comment-section">
-              <h2><%= review.user.first_name %> says:</h2>
-              <h2><%= review.content %></h2>
+            <h2><%= review.content %></h2>
+            <h2><%= review.user.first_name %></h2>
           </div>
         </div>
       </div>
      <% end %>
   </div>
+</div>
 <div class="categories">
   <div class="categories-title">
     <h1>Explore the possibilities</h1>
