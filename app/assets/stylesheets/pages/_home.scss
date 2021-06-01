@@ -4,7 +4,6 @@
   background-position: center;
   padding: 150px 0;
   height: 100vh;
-  display: flex;
   align-items: center;
 }
 
@@ -26,6 +25,16 @@
 .banner a {
   color: white;
   opacity: 0.8;
+}
+
+.container {
+  position: relative;
+}
+
+.form {
+  position: absolute;
+  left: 0;
+  padding: 15px;
 }
 
 .categories{
