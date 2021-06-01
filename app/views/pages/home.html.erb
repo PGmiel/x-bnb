@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "banner.jpg" %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_tag("banner_rv4zbx") %>);">
   <!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag asset_path "logo.png" %>
@@ -41,7 +41,7 @@
   <% @categories.each do |category| %>
     <div class="col-lg-3 col-md-6 col-sm-6">
       <div class="card">
-        <%= image_tag "bike.jpg" %>
+        <%= cl_image_tag("bike_kjfsvx") %>
         <div class="card-infos">
           <div>
             <h2><%= link_to category.name, category_path(category)  %></h2>
