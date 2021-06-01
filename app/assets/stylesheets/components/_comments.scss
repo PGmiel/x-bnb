@@ -14,9 +14,10 @@
   justify-content: space-around;
   flex-direction: column;
   overflow: hidden;
+  border-radius: 12px;
 }
 
-.card > .comment-section {
+.comment {
   height: 200px;
   background: black !important;
   color: black;
@@ -26,6 +27,9 @@
   align-items: center;
   transition: 0.5s;
   opacity: 1;
+  & h2 {
+    font-size: 1.5em;
+  }
   &:hover {
     background: black !important;
     color: white;
