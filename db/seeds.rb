@@ -44,7 +44,7 @@ end
   @activity.save!
   @activity.categories = categories.sample(3)
   @activity.reviews = 2.times.map do 
-    Review.create(
+    Review.create!(
       content: Faker::Lorem.sentence,
       rating: rand(0..5)
     )
