@@ -35,7 +35,8 @@
 }
 
 .host-container {
-  padding: 3em 0;
+  padding: 0 3em;
+  margin-bottom: 3em;
 }
 
 .become-host {
@@ -43,6 +44,7 @@
   background-position: center;
   padding: 150px 0;
   height: 100vh;
+  border-radius: 12px;
 }
 
 .become-host h1 {
@@ -66,14 +68,17 @@
 }
 
 
-.footer a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
+.form {
+  position: absolute;
+  top: 250px;
+  right: 150px;
 }
 
-.footer a:hover{
-  text-decoration: none;
-  color: black;
-  opacity: 1;
+.form-infos {
+  display: flex;
+}
+
+.form-group {
+  margin: 0px;
+  width: 130px;
 }

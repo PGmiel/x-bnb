@@ -5,4 +5,6 @@ class Activity < ApplicationRecord
   has_many :reviews
   has_many :users, through: :bookings
   has_many :categories, through: :category_activities
+
+  validates :name, :description, :price, presence: true
 end
