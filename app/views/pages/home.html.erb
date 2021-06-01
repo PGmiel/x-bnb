@@ -30,12 +30,12 @@
     <h1>xSports bnb brings <strong>adrenaline</strong> to <strong>everyone</strong>!</h1>
     <p>Change your life and try new extreme sports</p>
     <a class="btn btn-flat" href="#">Learn what's new</a>
-  </div>
+</div>
 </div>
 
 <div class="categories">
   <div class="categories-title">
-    <h1>Explore the possibilities</h1>
+    <h1>Discover the categories!</h1>
   </div>
   <div class="row">
   <% @categories.each do |category| %>
@@ -50,28 +50,29 @@
       </div>
     </div>
   <% end %>
+  </div>
 </div>
 <div class="host-container">
   <div class="become-host" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "become_host.jpg" %>);">
     <div class="container">
       <h1>Become a Host</h1>
       <p>Earn extra income and unlock new opportunities by sharing your gear.</p>
-      <a class="btn btn-light" href="#">Learn more</a>
+      <%= link_to "Learn More", host_path, class: "btn btn-dark" %>
     </div>
   </div>
 </div>
 <div class="footer">
-  <div class="footer-copyright">
-    <!-- © 2021 xSport bnb, Inc • Confidentialité • Conditions générales • Plan du site • Infos sur l'entreprise -->
-    <a href="#">© 2021 xSport bnb, Inc •</a>
-    <a href="#">Confidentialité •</a>
-    <a href="#">Conditions générales •</a>
-    <a href="#">Plan du site •</a>
-    <a href="#">Infos sur l'entreprise</a>
-  </div>
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
+    <div class="footer-copyright">
+      <!-- © 2021 xSport bnb, Inc • Confidentialité • Conditions générales • Plan du site • Infos sur l'entreprise -->
+      <a href="#">© 2021 xSport bnb, Inc •</a>
+      <a href="#">Confidentialité •</a>
+      <a href="#">Conditions générales •</a>
+      <a href="#">Plan du site •</a>
+      <a href="#">Infos sur l'entreprise</a>
+    </div>
+    <div class="footer-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
 </div>
