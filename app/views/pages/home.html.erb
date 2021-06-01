@@ -32,6 +32,15 @@
     <a class="btn btn-flat" href="#">Learn what's new</a>
   </div>
 </div>
+<div class="form">
+  <%= simple_form_for :query_id , url: categories_path, method: :get do |f| %>
+    <div class="form-infos">
+      <%= f.input :categories, :collection => @categories.all.map(&:name), label: false %>
+      <%= f.button :submit, 'Search' %>
+    </div>
+  <% end %>
+</div>
+
 
 <div class="categories">
   <div class="categories-title">
