@@ -80,9 +80,14 @@
   opacity: 1;
 }
 
+.form {
+  position: absolute;
+  top: 250px;
+  right: 150px;
+}
+
 .form-infos {
   display: flex;
-  position: absolute;
 }
 
 .form-group {
