@@ -24,7 +24,7 @@ before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
     else
       render :new
     end
-  endbefore_action :set_activity, only: [ :show, :edit, :update, :destroy ]
+  end
 
   def edit
   end
