@@ -3,7 +3,11 @@
 <p><%= @activity.address %></p>
 <p><%= @activity.price %></p>
 
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %> |
+<%#= link_to 'Leave a review', new_ractivity_review_path(@ractivity) %>
 <%= link_to "Delete #{@activity.name}",
             activity_path(@activity),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+
