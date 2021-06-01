@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookings = Booking.all
@@ -19,7 +19,9 @@ before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
     # we need `activity_id` to associate booking with corresponding activity
     @activity = Activity.find(params[:activity_id])
     @booking.activity = @activity
-    if @booking.save
+    @booking.user = current_user
+    @booking.status = "booked"
+    if @booking.save!
       redirect_to activity_path(@activity)
     else
       render :new
