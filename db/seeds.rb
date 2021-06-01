@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Category.delete_all
-Activity.delete_all
-User.delete_all
+CategoryActivity.destroy_all
+Category.destroy_all
+Activity.destroy_all
+User.destroy_all
 
 categories = [
 Category.create( name: "Water" ),
@@ -41,4 +42,11 @@ end
     )
   @activity.save!
   @activity.categories = categories.sample(3)
+  @activity.reviews = 2.times.map do 
+    Review.create(
+      content: Faker::Lorem.sentence,
+      rating: rand(0..5)
+    )
+  end
 end
+
