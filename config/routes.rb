@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [ :new, :create]
   end
   resources :bookings, except: [ :new, :create]
-  resources :users, only: [:create, :new, :destroy, :edit]
   resources :categories, only: [:index, :show]
+  get "host", to: "pages#host"
 end

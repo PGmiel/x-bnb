@@ -1,17 +1,48 @@
-<%= render 'shared/navbar' %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
-  
-  <div class="container">
-    
-    <h1>xSports bnb brings <strong>adrenaline</strong> to <strong>everyone</strong>!</h1>
-    <p>Change your life and try new extreme sports</p>
-    <a class="btn btn-flat" href="#">Learn what's new</a>
-</div>
+  <div class="container-host">
+    <div class="container">
+      <h1>Sharing your passion to everyone!</h1>
+      <%= link_to "Let's Go!",  new_user_registration_path, class: "btn btn-dark" %>
+      <h2>or</h2>
+      <%= link_to "Back to Home page",  root_path, class: "btn btn-dark" %>
+    </div>
+  </div>
 </div>
 
+<div class="container-comments">
+  <div class="categories-title">
+    <h1>Reviews from our users!</h1>
+  </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card">
+          <div class="comment-section">
+              <h2>XX says:</h2>
+              <h2><%= @reviews.sample.content  %></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card">
+          <div class="comment-section">
+              <h2>XX says:</h2>
+              <h2><%= @reviews.sample.content  %></h2>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card">
+          <div class="comment-section">
+              <h2>XX says:</h2>
+              <h2><%= @reviews.sample.content  %></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
 <div class="categories">
   <div class="categories-title">
-    <h1>Discover the categories!</h1>
+    <h1>Explore the possibilities</h1>
   </div>
   <div class="row">
   <% @categories.each do |category| %>
@@ -31,9 +62,9 @@
 <div class="host-container">
   <div class="become-host" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "become_host.jpg" %>);">
     <div class="container">
-      <h1>Become a Host</h1>
+      <h1>Launch your activity!</h1>
       <p>Earn extra income and unlock new opportunities by sharing your gear.</p>
-      <%= link_to "Learn More", host_path, class: "btn btn-dark" %>
+       <%= link_to "Let's Go!",  new_user_registration_path, class: "btn btn-dark" %>
     </div>
   </div>
 </div>
