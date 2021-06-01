@@ -66,12 +66,12 @@ ActiveRecord::Schema.define(version: 2021_06_01_090422) do
   end
 
   create_table "category_activities", force: :cascade do |t|
-    t.bigint "categories_id", null: false
-    t.bigint "activities_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["activities_id"], name: "index_category_activities_on_activities_id"
-    t.index ["categories_id"], name: "index_category_activities_on_categories_id"
+    t.index ["activity_id"], name: "index_category_activities_on_activity_id"
+    t.index ["category_id"], name: "index_category_activities_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,12 +80,18 @@ ActiveRecord::Schema.define(version: 2021_06_01_090422) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "users"
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
-  add_foreign_key "category_activities", "activities", column: "activities_id"
-  add_foreign_key "category_activities", "categories", column: "categories_id"
+  add_foreign_key "category_activities", "activities"
+  add_foreign_key "category_activities", "categories"
 end

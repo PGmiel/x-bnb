@@ -1,0 +1,14 @@
+<div class="container">
+  <h2><%= @activity.name %></h2>
+  <p><%= @activity.description %></p>
+  <p><%= @activity.address %></p>
+  <p><%= @activity.price %></p>
+
+  <%= link_to "Delete #{@activity.name}",
+              activity_path(@activity),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "btn btn-primary" %>
+
+  <%= link_to "Back" , root_path , class: "btn btn-primary" %>
+</div>
