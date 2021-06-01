@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :bookings, except: [ :new, :create]
   resources :categories, only: [:index, :show]
   get "host", to: "pages#host"
+  get "my_activities", to: "activities#user_activities", as: :user_activities
 end

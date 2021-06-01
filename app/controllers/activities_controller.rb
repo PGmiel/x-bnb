@@ -37,6 +37,9 @@ class ActivitiesController < ApplicationController
   redirect_to activities_path
   end
 
+  def user_activities
+  end
+
   private
 
   def activity_params
