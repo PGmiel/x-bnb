@@ -5,4 +5,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def seller?
+    activities.present?
+  end
 end
+
+#current_user.seller?
+  # to make paths accesssbile oly for user with activities on sold
