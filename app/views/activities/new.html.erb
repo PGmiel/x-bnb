@@ -1,1 +1,8 @@
-<%= render "form", activity: @activity %>
+<%= simple_form_for(@activity) do |f| %>
+  <%= f.input :name %>
+  <%= f.association :categories %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>

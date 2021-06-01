@@ -14,8 +14,8 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
+    @activity.user = current_user
     @activity.save
-
     # no need for app/views/activitys/create.html.erb
     redirect_to activity_path(@activity)
   end
@@ -27,7 +27,7 @@ class ActivitiesController < ApplicationController
     @activity.update(activity_params)
 
     # no need for app/views/activitys/update.html.erb
-    redirect_to activity_path(@activity)
+    redirect_to user_session_path
   end
 
   def destroy
@@ -40,7 +40,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :address, :price)
+    params.require(:activity).permit(:name, :description, :address, :price, category_ids: [])
   end
 
   def set_activity
