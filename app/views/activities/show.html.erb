@@ -1,7 +1,9 @@
-<h2><%= @activity.name %></h2>
-<p><%= @activity.description %></p>
-<p><%= @activity.address %></p>
-<p><%= @activity.price %></p>
+<div class="container">
+  <h2><%= @activity.name %></h2>
+  <p><%= @activity.description %></p>
+  <p><%= @activity.address %></p>
+  <p><%= @activity.price %></p>
+
 
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %> |
@@ -10,4 +12,23 @@
             activity_path(@activity),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+
+      <div class="list-group">
+        <% @activity.reviews.each do |review| %>
+          <li class="list-group-item">
+            <small>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </small>
+            <p><%= review.content %></p>
+          </li>
+        <% end %>
+      </div>
 

@@ -1,0 +1,8 @@
+<div class="container">
+  <h2> list of Activities for <%= @category.name %></h2>
+  <ul>
+  <% @category.activities.each do |activity| %>
+    <li><%= link_to activity.name, activity_path(activity) %></li>
+  <% end %>
+  </ul>
+</div>
