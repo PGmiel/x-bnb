@@ -1,12 +1,14 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
-  <div class="container-host">
-    <div class="container">
-      <h1>Sharing your passion to everyone!</h1>
-      <%= link_to "Sing-up!",  new_user_registration_path, class: "btn btn-dark" %>
-      <h1>or</h1>
-      <%= link_to "Create activity",  new_activity_path, class: "btn btn-dark" %>
-      <h1>or</h1>
-      <%= link_to "Back to Home page",  root_path, class: "btn btn-dark" %>
+<div class="banner-host" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
+  <div class="container">
+    <div class="flex-host">
+      <div class="container-host one">
+        <h1>Sharing your passion to everyone!</h1>
+      </div>
+      <div class="container-host two">
+        <%= link_to "Sing-up!",  new_user_registration_path, class: "btn btn-dark" %>
+        <%= link_to "Create activity",  new_activity_path, class: "btn btn-dark" %>
+        <%= link_to "Back to Home page",  root_path, class: "btn btn-dark" %>
+      </div>
     </div>
   </div>
 </div>
@@ -19,14 +21,17 @@
       <%= @reviews.all.sample(4).each do |review| %>
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card">
-          <div class="comment-section">
-              <h2><%= review.user.first_name %> says:</h2>
-              <h2><%= review.content %></h2>
+          <div class="comment-image">
           </div>
         </div>
+          <div class="comment">
+            <h2><%= review.content %></h2>
+            <h2><%= review.user.first_name %></h2>
+          </div>
       </div>
      <% end %>
   </div>
+</div>
 <div class="categories">
   <div class="categories-title">
     <h1>Explore the possibilities</h1>

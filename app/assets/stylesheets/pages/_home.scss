@@ -4,6 +4,7 @@
   background-position: center;
   padding: 150px 0;
   height: 100vh;
+  align-items: center;
 }
 
 .banner h1 {
@@ -26,6 +27,16 @@
   opacity: 0.8;
 }
 
+.container {
+  position: relative;
+}
+
+.form {
+  position: absolute;
+  left: 0;
+  padding: 15px;
+}
+
 .categories{
   padding: 3em;
 }
@@ -35,8 +46,8 @@
 }
 
 .host-container {
-  padding: 0 3em;
-  margin-bottom: 3em;
+  padding: 3em 3em;
+  background:black;
 }
 
 .become-host {
@@ -66,7 +77,6 @@
   color: white;
   opacity: 0.8;
 }
-
 
 .form {
   position: absolute;

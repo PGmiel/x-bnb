@@ -1,12 +1,37 @@
 .container-comments {
   padding: 0 3em;
-  margin-top: 1em;
+  background: black;
+  & h1{
+    color: white;
+    padding-top: 1em;
+  }
 }
 
-.comment-section {
+.comment-image {
   height: 300px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.comment {
+  height: 200px;
+  background: black !important;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.5s;
+  opacity: 1;
+  & h2 {
+    font-size: 1.5em;
+  }
+  &:hover {
+    background: black !important;
+    color: white;
+  }
 }
