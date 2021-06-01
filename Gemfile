@@ -65,3 +65,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #stockage image
 gem 'cloudinary', '~> 1.16.0'
+

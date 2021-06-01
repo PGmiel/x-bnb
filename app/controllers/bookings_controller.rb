@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   def index
     @bookings = Booking.all
@@ -19,7 +19,9 @@ before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
     # we need `activity_id` to associate booking with corresponding activity
     @activity = Activity.find(params[:activity_id])
     @booking.activity = @activity
-    if @booking.save
+    @booking.user = current_user
+    @booking.status = "booked"
+    if @booking.save!
       redirect_to activity_path(@activity)
     else
       render :new
@@ -30,14 +32,13 @@ before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
   end
 
   def update
-   @booking.update(booking_params)
+    @booking.update(booking_params)
 
     # no need for app/views/bookings/update.html.erb
     redirect_to booking_path(@booking)
   end
 
   def destroy
-
     @booking.destroy
     redirect_to activity_path(@booking.activity)
   end
@@ -51,5 +52,4 @@ before_action :set_booking, only: [ :show, :edit, :update, :destroy ]
   def set_booking
      @booking = Booking.find(params[:id])
   end
-
 end

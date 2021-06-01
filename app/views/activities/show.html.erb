@@ -7,7 +7,7 @@
 
 <%= link_to 'Edit', edit_activity_path(@activity) %> |
 <%= link_to 'Back', activities_path %> |
-<%#= link_to 'Leave a review', new_ractivity_review_path(@ractivity) %>
+<%= link_to 'Book', new_activity_booking_path(@activity) %> |
 <%= link_to "Delete #{@activity.name}",
             activity_path(@activity),
             method: :delete,
