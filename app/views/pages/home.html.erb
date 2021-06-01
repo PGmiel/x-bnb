@@ -1,2 +1,146 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "banner.jpg" %>);">
+  <!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag asset_path "logo.png" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <%= link_to "Home", "#", class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/roch-dv", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Messages", "#", class: "dropdown-item" %>
+            <%= link_to "Notifications", "#", class: "dropdown-item" %>
+            <%= link_to "Trips", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", "#", class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+  <div class="container">
+    <h1>xSports bnb brings <strong>adrenaline</strong> to <strong>everyone</strong>!</h1>
+    <p>Change your life and try new extreme sports</p>
+    <a class="btn btn-flat" href="#">Learn what's new</a>
+  </div>
+</div>
+
+<div class="categories">
+  <div class="categories-title">
+    <h1>Explore the possibilities</h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card">
+        <%= image_tag "bike.jpg" %>
+        <div class="card-infos">
+          <div>
+            <h2>Mountain bike</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card">
+        <%= image_tag "ski.jpg" %>
+        <div class="card-infos">
+          <div>
+            <h2>Ski and snowboard</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card">
+        <%= image_tag "surf.jpg" %>
+        <div class="card-infos">
+          <div>
+            <h2>Surf</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card">
+        <%= image_tag "ferrari.jpg" %>
+        <div class="card-infos">
+          <div>
+            <h2>Rent your favorite car</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card">
+        <%= image_tag "ferrari.jpg" %>
+        <div class="card-infos">
+          <div>
+            <h2>Title here</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card">
+        <%= image_tag "surf.jpg" %>
+        <div class="card-infos">
+          <div>
+            <h2>Title here</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card">
+        <%= image_tag "ski.jpg" %>
+        <div class="card-infos">
+          <div>
+            <h2>Title here</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="card">
+        <%= image_tag "bike.jpg" %>
+        <div class="card-infos">
+          <div>
+            <h2>Title here</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="host-container">
+  <div class="become-host" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "become_host.jpg" %>);">
+    <div class="container">
+      <h1>Become a Host</h1>
+      <p>Earn extra income and unlock new opportunities by sharing your gear.</p>
+      <a class="btn btn-light" href="#">Learn more</a>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-copyright">
+    <!-- © 2021 xSport bnb, Inc • Confidentialité • Conditions générales • Plan du site • Infos sur l'entreprise -->
+    <a href="#">© 2021 xSport bnb, Inc •</a>
+    <a href="#">Confidentialité •</a>
+    <a href="#">Conditions générales •</a>
+    <a href="#">Plan du site •</a>
+    <a href="#">Infos sur l'entreprise</a>
+  </div>
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+</div>
