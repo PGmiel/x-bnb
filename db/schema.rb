@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_31_152239) do
+
+ActiveRecord::Schema.define(version: 2021_06_01_090422) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -45,12 +68,21 @@ ActiveRecord::Schema.define(version: 2021_05_31_152239) do
   end
 
   create_table "category_activities", force: :cascade do |t|
-    t.bigint "categories_id", null: false
-    t.bigint "activities_id", null: false
+    t.bigint "category_id", null: false
+    t.bigint "activity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["activities_id"], name: "index_category_activities_on_activities_id"
-    t.index ["categories_id"], name: "index_category_activities_on_categories_id"
+    t.index ["activity_id"], name: "index_category_activities_on_activity_id"
+    t.index ["category_id"], name: "index_category_activities_on_category_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "activity_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_reviews_on_activity_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,9 +99,12 @@ ActiveRecord::Schema.define(version: 2021_05_31_152239) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "users"
   add_foreign_key "bookings", "activities"
   add_foreign_key "bookings", "users"
+
   add_foreign_key "category_activities", "activities", column: "activities_id"
   add_foreign_key "category_activities", "categories", column: "categories_id"
+  add_foreign_key "reviews", "activities"
 end
