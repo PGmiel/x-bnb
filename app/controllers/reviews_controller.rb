@@ -1,15 +1,18 @@
 class ReviewsController < ApplicationController
+  before_action :set_review, only: [ :show, :edit, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: :show
+
   def new
     @review = Review.new
-    @activity = activity.find(params[:activity_id])
-    @review.activity = @activity
+    @activity = Activity.find(params[:activity_id])
   end
 
   def create
     @review = Review.new(review_params)
-    @activity = activity.find(params[:activity_id])
+    @activity = Activity.find(params[:activity_id])
     @review.activity = @activity
-    if @review.save
+    @review.user = current_user
+    if @review.save!
       redirect_to activity_path(@activity)
     else
       render :new
@@ -17,6 +20,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def set_review
+    @review = Review.find(params[:id])
+  end
 
   def review_params
     params.require(:review).permit(:content, :rating)
