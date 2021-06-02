@@ -31,8 +31,6 @@ Category.create( name: "City" )
     )
 end
 
-
-
 20.times do
   activity = Activity.create(
     name: ["skiing", "kitesuring", "climbing", "via-ferrata", "thriathlon", "bike", "roller-blading", "wakeboarding", "surfing", "skateboarding", "street-luge", "kayaking"].sample,

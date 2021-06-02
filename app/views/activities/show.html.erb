@@ -4,31 +4,40 @@
   <p><%= @activity.address %></p>
   <p><%= @activity.price %></p>
 
+  <%= link_to 'Home', root_path %> |
+  <%= link_to "Back", :back %> |
+  <%= link_to 'Book', new_activity_booking_path(@activity) %> |
+  <%= link_to 'Add a Review', new_activity_review_path(@activity) %> |
+  <%= link_to 'Edit',
+  if current_user == @activity.user
+    edit_activity_path(@activity)
+  else
+    root_path
+  end %> |
+  <% if current_user == @activity.user %>
+    <%= link_to "Delete #{@activity.name}",
+          activity_path(@activity),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+  <% end %>
 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %> |
-<%= link_to 'Book', new_activity_booking_path(@activity) %> |
-<%= link_to "Delete #{@activity.name}",
-            activity_path(@activity),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-
-      <div class="list-group">
-        <% @activity.reviews.each do |review| %>
-          <li class="list-group-item">
-            <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
-                <% end %>
-                <% count += 1 %>
+  <div class="list-group">
+    <% @activity.reviews.each do |review| %>
+      <li class="list-group-item">
+        <small>
+          <% count = 0 %>
+            <% 5.times do %>
+              <% if review.rating > count %>
+                <i class="fas fa-star"></i>
+              <% else %>
+                <i class="far fa-star"></i>
               <% end %>
-            </small>
-            <p><%= review.content %></p>
-          </li>
-        <% end %>
-      </div>
+                <% count += 1 %>
+            <% end %>
+        </small>
+          <p><%= review.content %></p>
+          <p><%= review.user.first_name %></p>
+      </li>
+    <% end %>
+  </div>
 </div>
