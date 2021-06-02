@@ -1,8 +1,7 @@
 .form {
   max-width: 12vw;
   display: grid;
-  grid-template-rows: 0,5fr, 1fr, 1,fr;
-  gap: 1em;
+  gap: 0.2em;
   & p {
     margin: 0;
   }
