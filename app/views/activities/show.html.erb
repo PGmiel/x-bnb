@@ -1,45 +1,45 @@
-<div class="container">
-  <h2><%= @activity.name %></h2>
-  <p><%= @activity.description %></p>
-  <p><%= @activity.address %></p>
-  <p><%= @activity.price %></p>
+<div class="container mt-3">
+    <h2><%= @activity.name %></h2>
+    <p><%= @activity.description %></p>
+    <p><%= @activity.address %></p>
+    <p><%= @activity.price %></p>
 
   <%= link_to 'Home', root_path %> |
   <%= link_to "Back", user_activities_path %> |
   <%= link_to 'Book', new_activity_booking_path(@activity) %> |
   <%= link_to 'Add a Review', new_activity_review_path(@activity) %> |
 
-  <% if current_user == @activity.user %>
-    <%= link_to 'Edit', edit_activity_path(@activity) %> |
-  <% end %>
-  <% if current_user == @activity.user %>
-    <%= link_to "Delete #{@activity.name}",
-          activity_path(@activity),
-          method: :delete,
-          data: { confirm: "Are you sure?" } %> |
-  <% end %>
-
-<div class="list-group">
-    <% @activity.reviews.each do |review| %>
-      <li class="list-group-item">
-        <small>
-          <% count = 0 %>
-            <% 5.times do %>
-              <% if review.rating > count %>
-                <i class="fas fa-star"></i>
-              <% else %>
-                <i class="far fa-star"></i>
-              <% end %>
-                <% count += 1 %>
-            <% end %>
-        </small>
-          <p><%= review.content %></p>
-          <p><%= review.user.first_name %></p>
-          <% if current_user == review.user %>
-            <%= link_to 'Edit Review', edit_activity_review_path(@activity, review) %>
-          <% end %>
-      </li>
+    <% if current_user == @activity.user %>
+      <%= link_to 'Edit', edit_activity_path(@activity) %> |
     <% end %>
-  </div>
+    <% if current_user == @activity.user %>
+      <%= link_to "Delete #{@activity.name}",
+            activity_path(@activity),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %> |
+    <% end %>
+
+  <div class="list-group">
+      <% @activity.reviews.each do |review| %>
+        <li class="list-group-item mt-2 mb-4">
+          <small>
+            <% count = 0 %>
+              <% 5.times do %>
+                <% if review.rating > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                  <% count += 1 %>
+              <% end %>
+          </small>
+            <p><%= review.content %></p>
+            <p><%= review.user.first_name %></p>
+            <% if current_user == review.user %>
+              <%= link_to 'Edit Review', edit_activity_review_path(@activity, review) %>
+            <% end %>
+        </li>
+      <% end %>
+    </div>
 </div>
 
