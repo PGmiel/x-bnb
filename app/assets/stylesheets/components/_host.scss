@@ -27,9 +27,15 @@
   opacity: 0.8;
 }
 
+.flex-host {
+  display: flex;
+  max-height: 20vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .container-host {
   width: 50%;
-  max-height: 30vh;
   margin: 0;
   padding: 0.5em;
   & h1 {
@@ -37,14 +43,27 @@
   }
 }
 
-.container-host > .two {
-  display: flex;
-  flex-direction: column;
+.container-host-two {
+  width: 50%;
+  margin: 0;
+  padding: 0.5em;
+  display: grid;
+  grid-auto-flow: column;
   & a {
     margin: 5px;
+    justify-text: center;
   }
 }
 
-.flex-host {
-  display: flex;
+@media (max-width: 770px) {
+  .container-host-two {
+    grid-auto-flow: row;
+  }
 }
+
+
+
+
+
+
+

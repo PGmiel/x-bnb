@@ -1,0 +1,19 @@
+.container-login {
+  display: flex;
+  justify-content: center;
+  max-width: 500vw;
+}
+
+.user-login-signup {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 1em 1em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 1 auto;
+  width: clamp(40%, 50%, 90%);
+}
+
+.login-title {
+  text-align: center;
+}
+
