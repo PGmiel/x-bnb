@@ -32,16 +32,12 @@ class ActivitiesController < ApplicationController
 
   def update
     @activity.update(activity_params)
-
-    # no need for app/views/activitys/update.html.erb
     redirect_to user_session_path
   end
 
   def destroy
-  @activity.destroy
-
-  # no need for app/views/activities/destroy.html.erb
-  redirect_to activities_path
+    @activity.destroy
+    redirect_to activities_path
   end
 
   def user_activities
