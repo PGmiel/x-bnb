@@ -8,17 +8,15 @@
   <%= link_to "Back", :back %> |
   <%= link_to 'Book', new_activity_booking_path(@activity) %> |
   <%= link_to 'Add a Review', new_activity_review_path(@activity) %> |
-  <%= link_to 'Edit',
-  if current_user == @activity.user
-    edit_activity_path(@activity)
-  else
-    root_path
-  end %> |
+
+  <% if current_user == @activity.user %>
+    <%= link_to 'Edit', edit_activity_path(@activity) %> |
+  <% end %>
   <% if current_user == @activity.user %>
     <%= link_to "Delete #{@activity.name}",
           activity_path(@activity),
           method: :delete,
-          data: { confirm: "Are you sure?" } %>
+          data: { confirm: "Are you sure?" } %> |
   <% end %>
 
   <div class="list-group">
@@ -37,6 +35,9 @@
         </small>
           <p><%= review.content %></p>
           <p><%= review.user.first_name %></p>
+          <% if current_user == review.user %>
+            <%= link_to 'Edit Review', edit_activity_review_path(@activity, review) %>
+          <% end %>
       </li>
     <% end %>
   </div>
