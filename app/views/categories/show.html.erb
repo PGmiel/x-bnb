@@ -2,7 +2,15 @@
   <h2> list of Activities for <%= @category.name %></h2>
   <ul>
   <% @category.activities.each do |activity| %>
-    <li><%= link_to activity.name, activity_path(activity) %></li>
+    <span>
+      <div class="card-product">
+        <img src="" />
+          <div class="card-product-infos">
+          <h2><%= link_to activity.name, activity_path(activity) %></h2>
+          <p> <strong><%=activity.address%></strong> only.<%=activity.price%>€</p>
+        </div>
+      </div>
+    </span>
   <% end %>
   </ul>
   <div id="map"
