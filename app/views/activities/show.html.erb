@@ -4,10 +4,10 @@
     <p><%= @activity.address %></p>
     <p><%= @activity.price %></p>
 
-    <%= link_to 'Home', root_path %> |
-    <%= link_to "Back", :back %> |
-    <%= link_to 'Book', new_activity_booking_path(@activity) %> |
-    <%= link_to 'Add a Review', new_activity_review_path(@activity) %> |
+  <%= link_to 'Home', root_path %> |
+  <%= link_to "Back", user_activities_path %> |
+  <%= link_to 'Book', new_activity_booking_path(@activity) %> |
+  <%= link_to 'Add a Review', new_activity_review_path(@activity) %> |
 
     <% if current_user == @activity.user %>
       <%= link_to 'Edit', edit_activity_path(@activity) %> |
