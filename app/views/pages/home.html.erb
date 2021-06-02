@@ -6,12 +6,20 @@
       <a class="btn btn-flat" href="#">Learn what's new</a>
     <div class="form">
       <p>Quick search Here!</p>
-      <%= simple_form_for :query_id , url: categories_path, method: :get do |f| %>
-        <div class="form-infos">
-          <%= f.input :categories, :collection => @categories.all.map(&:name), label: false %>
-          <%= f.button :submit, 'Search' %>
-        </div>
+      <%= form_tag activities_path, method: :get do %>
+        <%= select_tag :category,
+        options_from_collection_for_select(Category.all, "id", "name"),
+          class: "form-control",
+          placeholder: "Find a activity"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
+<!--       <%#= form_tag :query_id , url: categories_path, method: :get do |f| %>
+        <div class="form-infos">
+          <%#= f.input :categories, :collection => @categories.all.map(&:name), label: false %>
+          <%#= f.button :submit, 'Search' %>
+        </div>
+      <%# end %> -->
     </div>
   </div>
 </div>
