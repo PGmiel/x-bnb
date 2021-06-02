@@ -1,8 +1,15 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: :show
 
   def index
-    @activities = Activity.all
+    if params[:category]
+      # @activities = Activity.where(category_id: params[:category])
+      @activities = CategoryActivity.where(category_id: params[:category]).map{ |category_activity| category_activity.activity }
+    else
+      @activities = Activity.all
+    end
   end
 
   def show
@@ -25,16 +32,12 @@ class ActivitiesController < ApplicationController
 
   def update
     @activity.update(activity_params)
-
-    # no need for app/views/activitys/update.html.erb
     redirect_to user_session_path
   end
 
   def destroy
-  @activity.destroy
-
-  # no need for app/views/activities/destroy.html.erb
-  redirect_to activities_path
+    @activity.destroy
+    redirect_to activities_path
   end
 
   def user_activities
