@@ -12,7 +12,9 @@ class CategoriesController < ApplicationController
     @markers = @category.activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
-        lng: activity.longitude
+        lng: activity.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { activity: activity }),
+        #image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
   end
