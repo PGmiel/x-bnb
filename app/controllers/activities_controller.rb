@@ -31,13 +31,16 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    @activity.update(activity_params)
-    redirect_to user_session_path
+    if @activity.update(activity_params)
+      redirect_to activity_path(@activity)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @activity.destroy
-    redirect_to activities_path
+    redirect_to user_activities_path
   end
 
   def user_activities
