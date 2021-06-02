@@ -4,7 +4,12 @@ class ActivitiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-    @activities = Activity.all
+    if params[:category]
+      # @activities = Activity.where(category_id: params[:category])
+      @activities = CategoryActivity.where(category_id: params[:category]).map{ |category_activity| category_activity.activity }
+    else
+      @activities = Activity.all
+    end
   end
 
   def show
