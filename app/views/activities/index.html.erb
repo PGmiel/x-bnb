@@ -1,5 +1,9 @@
 <div class="container">
+  <% if params[:category] %>
+  <h2> Activities : <%= Category.find(params[:category]).name %></h2>
+  <% else %>
   <h2>All the activites</h2>
+  <% end %>
   <ul>
     <% @activities.each do |activity| %>
       <li><%= link_to activity.name, activity_path(activity) %> by: <%= activity.user.first_name %></li>
