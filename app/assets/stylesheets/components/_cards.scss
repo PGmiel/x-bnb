@@ -36,10 +36,10 @@
 }
 
 
-.list-item-padding {
-  padding: 16px;
-  margin: 10px;
-}
+// .list-item-padding {
+//   padding: 16px;
+//   margin: 10px;
+// }
 
 .card-product img {
   height: 100%;
@@ -93,8 +93,9 @@
 
 .cards-product {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
   padding:  16px;
   flex-grow: 1;
+  margin: 10px;
 }

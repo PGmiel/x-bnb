@@ -1,5 +1,6 @@
 .main-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 500px;
 }
 
 .mapboxgl-canvas {
@@ -36,7 +37,7 @@
 
 @media(max-width: 992px) {
   .cards-product {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   #map {
     display: none;
@@ -45,7 +46,7 @@
 
 @media (min-width: 1200px){
   .cards-product {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
     #map {
       display: block;
