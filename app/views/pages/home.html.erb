@@ -4,15 +4,11 @@
     <div class="container-search-banner">
       <p>Quick search!</p>
         <div class="form">
-          <%= form_tag activities_path, method: :get do %>
-            <%= select_tag :category,
-            options_from_collection_for_select(Category.all, "id", "name"),
-              class: "form-control",
-              placeholder: "Find a activity"
-            %>
-          <% end %>
+          <%= simple_form_for :query_id , url: categories_path, method: :get do |f| %>
+           <div class="form-infos">
+            <%= f.input :categories, :collection => @categories.all.map(&:name), label: false %>
+            <%= f.button :submit, 'Search' %>    </div>     <% end %>
         </div>
-      <%= submit_tag "Search", class: "btn btn-danger" %>
     </div>
   </div>
   <div class="container">
