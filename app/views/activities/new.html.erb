@@ -1,2 +1,16 @@
-<%= render "form", activity: @activity %>
 
+<div class="container mt-5">
+  <div class="container-login">
+    <div class="user-login-signup">
+      <%= simple_form_for(@activity) do |f| %>
+        <%= f.input :name %>
+        <%= f.association :categories, input_html: { class: 'select2' } %>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :price, label: "Price in €"%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
