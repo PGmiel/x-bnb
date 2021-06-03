@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "booked"
     if @booking.save!
-      redirect_to activity_path(@activity)
+      redirect_to user_activities_path
     else
       render :new
     end
