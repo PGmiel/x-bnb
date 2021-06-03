@@ -1,3 +1,4 @@
+
 <div class="container mt-5">
   <div class="container-login">
     <div class="user-login-signup">
@@ -7,6 +8,7 @@
         <%= f.input :description %>
         <%= f.input :address %>
         <%= f.input :price, label: "Price in €"%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit %>
       <% end %>
     </div>

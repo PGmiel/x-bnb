@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+<!-- <div class="container"> -->
+<%= simple_form_for(@activity) do |f| %>
+  <%= f.input :name %>
+  <%= f.association :categories, input_html: { class: 'select2' } %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit %>
+<% end %>
+<!-- </div> -->
+=======
 <body>
   <%= simple_form_for(@activity) do |f| %>
     <%= f.input :name %>
@@ -7,3 +20,4 @@
     <%= f.submit %>
   <% end %>
 </body> 
+>>>>>>> master

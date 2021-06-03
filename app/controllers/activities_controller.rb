@@ -21,6 +21,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -48,8 +49,11 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
-    redirect_to user_activities_path
+
+    # no need for app/views/activities/destroy.html.erb
+    redirect_to activities_path
   end
+
 
   def user_activities
   end
@@ -57,7 +61,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :address, :price, category_ids: [])
+    params.require(:activity).permit(:name, :description, :address, :price, category_ids: [], photos: [])
   end
 
   def set_activity
