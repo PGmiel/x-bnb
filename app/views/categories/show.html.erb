@@ -7,7 +7,7 @@
         
           
             <div class="card-product">
-              <img src="../assets/images/ferrari.jpg" />
+              <%= cl_image_tag activity.photos.first.key%>
                 <div class="card-product-infos">
                   <h2><%= link_to activity.name.capitalize, activity_path(activity) %></h2>
                   <p> <strong><%=activity.address.capitalize%></strong > <span class='card-product-infos-price'>Price <%=activity.price%>€</span></p>

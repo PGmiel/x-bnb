@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 Review.destroy_all
 CategoryActivity.destroy_all
 Category.destroy_all
@@ -21,13 +23,16 @@ Category.create( name: "Mountain" ),
 Category.create( name: "Cycling" ),
 Category.create( name: "City" )
 ]
+file = URI.open('https://kitt.lewagon.com/placeholder/users/ssaunier')
 
-user = User.create(
+user = User.create!(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: "testtest@gmail.com",
-   password: "123123"
+  password: "123123"
   )
+ user.photo.attach(io: file, filename: 'ssaunier.png', content_type: 'image/png')
+
 
 # 5.times do
 #   user = User.create!(
