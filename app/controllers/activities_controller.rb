@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -27,14 +28,14 @@ class ActivitiesController < ApplicationController
     @activity.update(activity_params)
 
     # no need for app/views/activitys/update.html.erb
-    redirect_to user_session_path
+    redirect_to activity_path(@activity)
   end
 
   def destroy
-  @activity.destroy
+    @activity.destroy
 
-  # no need for app/views/activities/destroy.html.erb
-  redirect_to activities_path
+    # no need for app/views/activities/destroy.html.erb
+    redirect_to activities_path
   end
 
   def user_activities
@@ -43,7 +44,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :address, :price, category_ids: [])
+    params.require(:activity).permit(:name, :description, :address, :price, category_ids: [], photos: [])
   end
 
   def set_activity

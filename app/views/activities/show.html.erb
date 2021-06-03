@@ -1,34 +1,103 @@
 <div class="container">
+<div class="head d-flex flex-column justify-content-center ml-4 mr-4">
   <h2><%= @activity.name %></h2>
-  <p><%= @activity.description %></p>
-  <p><%= @activity.address %></p>
-  <p><%= @activity.price %></p>
+<div class="summary d-flex flex-row justify-space between">
+  <div class="d-flex flex-start bi bi-star-fill">
+    <div class="p-2">
+      <i class=""> </i>
+      <%= @activity.avg_rating %>
+    </div>
+    <div class="p-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-euro" viewBox="0 0 16 16">
+        <path d="M4 9.42h1.063C5.4 12.323 7.317 14 10.34 14c.622 0 1.167-.068 1.659-.185v-1.3c-.484.119-1.045.17-1.659.17-2.1 0-3.455-1.198-3.775-3.264h4.017v-.928H6.497v-.936c0-.11 0-.219.008-.329h4.078v-.927H6.618c.388-1.898 1.719-2.985 3.723-2.985.614 0 1.175.05 1.659.177V2.194A6.617 6.617 0 0 0 10.341 2c-2.928 0-4.82 1.569-5.244 4.3H4v.928h1.01v1.265H4v.928z"/>
+      </svg>
+      <%= @activity.price %>
+    </div>
+    <div class="p-2"> <%= @activity.address %> </div>
+  </div>
+  <div class="d-flex flex-end">
+    <div class="p-2">save link placeholder</div>
+    <div class="p-2">share link placeholder</div>
+    <div class="p-2">Flex item 3</div>
+  </div>
+</div>
 
 
-<%= link_to 'Edit', edit_activity_path(@activity) %> |
-<%= link_to 'Back', activities_path %> |
-<%= link_to 'Book', new_activity_booking_path(@activity) %> |
-<%= link_to "Delete #{@activity.name}",
-            activity_path(@activity),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
 
-      <div class="list-group">
-        <% @activity.reviews.each do |review| %>
-          <li class="list-group-item">
-            <small>
-              <% count = 0 %>
-              <% 5.times do %>
-                <% if review.rating > count %>
-                  <i class="fas fa-star"></i>
-                <% else %>
-                  <i class="far fa-star"></i>
+  <div class="pictures">
+    <% @activity.photos.each do |photo| %>
+      <%#= <div class="picture d-flex grow">  %>
+      <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill %>
+      <%#= </div> %>
+    <% end %>
+  </div>
+
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row">
+      <div class= "col-8">
+        <div class="container">
+          <h2><%= @activity.name %></h2>
+          <p><%= @activity.description %></p>
+          <p><%= @activity.address %></p>
+          <p><%= @activity.price %></p>
+
+
+        <%= link_to 'Edit', edit_activity_path(@activity) %> |
+        <%= link_to 'Back', activities_path %> |
+        <%= link_to 'Book', new_activity_booking_path(@activity) %> |
+        <%= link_to "Delete #{@activity.name}",
+                    activity_path(@activity),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+
+              <div class="list-group">
+                <% @activity.reviews.each do |review| %>
+                  <li class="list-group-item">
+                    <small>
+                      <% count = 0 %>
+                      <% 5.times do %>
+                        <% if review.rating > count %>
+                          <i class="fas fa-star"></i>
+                        <% else %>
+                          <i class="far fa-star"></i>
+                        <% end %>
+                        <% count += 1 %>
+                      <% end %>
+                    </small>
+                    <p><%= review.content %></p>
+                  </li>
                 <% end %>
-                <% count += 1 %>
-              <% end %>
-            </small>
-            <p><%= review.content %></p>
-          </li>
+              </div>
+        </div>
+
+      </div>
+      <div class="col-4">
+        <%= simple_form_for [ @activity, @booking ] do |f| %>
+          <%= f.input :start_date %>
+          <%= f.input :end_date %>
+          <%= f.submit "Submit booking", class: "btn btn-primary" %>
         <% end %>
       </div>
+    </div>
+
+
+  </div>
 </div>
+
+
+
+
