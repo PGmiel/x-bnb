@@ -1,6 +1,10 @@
 .container-profile {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr, 1fr;
+  grid-template-areas:
+    "left right"
+    "bottom bottom";
   padding: 1em 0;
   gap: 1em;
 }
@@ -13,4 +17,21 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   width: 100%;
   margin-bottom: 1em;
+  & .activities {
+    grid-area: left;
+
+  }
+  & .bookings {
+    grid-area: right;
+  }
+}
+
+.user-info {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 1em 1em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 1em;
+  grid-area: bottom;
+  height: 40vh;
 }

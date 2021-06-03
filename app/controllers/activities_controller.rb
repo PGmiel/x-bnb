@@ -30,9 +30,8 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
-    @activity.save
-    # no need for app/views/activitys/create.html.erb
-    redirect_to activity_path(@activity)
+    @activity.save!
+    redirect_to user_activities_path
   end
 
   def edit
@@ -52,7 +51,6 @@ class ActivitiesController < ApplicationController
     # no need for app/views/activities/destroy.html.erb
     redirect_to activities_path
   end
-
 
   def user_activities
   end

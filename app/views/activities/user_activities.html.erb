@@ -2,28 +2,70 @@
   <div class="container-profile">
     <div class="activities">
       <h2>My activities</h2>
-      <ul>
-        <% current_user.activities.each do |activity| %>
-          <li><%= link_to activity.name, activity_path(activity) %> </li>
-        <% end %>
-      </ul>
-      <div>
-        <%= link_to "Create an activity", new_activity_path, class: "btn btn-primary" %>
-      </div>
+      <% if current_user.activities.count == 0 %>
+          <h5>Create your first activity</h5>
+          <%= link_to "Create an activity!", new_activity_path, class: "btn btn-primary" %>
+      <% else %>
+        <div class="flex-bookings">
+          <h5>Total Activities: <%= current_user.activities.count %></h5>
+          <%= link_to "Add more!", new_activity_path %>
+        </div>
+          <p><em><strong>Details</strong></em></p>
+          <ul class="list-inline">
+            <% current_user.activities.each do |activity| %>
+              <li><%= link_to activity.name, activity_path(activity) %></li>
+              <li>Rented to
+                  <ul>
+                    <% activity.bookings.each do |booking| %>
+                      <li><%= booking.user.first_name %></li>
+                    <% end %>
+                  </ul>
+              </li>
+            <% end %>
+          </ul>
+      <% end %>
     </div>
     <div class="bookings">
       <h2>My Bookings</h2>
-      <ul>
-        <% current_user.activities.each do |activity| %>
-          <li><%= link_to activity.name, activity_path(activity) %> </li>
-        <% end %>
-      </ul>
-      <div>
-        <%= link_to "Create an activity", new_activity_path, class: "btn btn-primary" %>
-      </div>
+      <% if current_user.bookings.count == 0 %>
+        <h5>Make your first Booking!</h5>
+        <%= link_to 'Start the search', root_path %>
+        <% else %>
+        <div class="flex-bookings">
+            <h5>Total Bookings: <%= current_user.bookings.count %></h5>
+            <%= link_to 'Book More!', root_path %>
+        </div>
+            <p><em><strong>Details</strong></em></p>
+            <ul class="list-inline">
+              <% current_user.bookings.each do |booking| %>
+                <li>For: <%= booking.activity.name %></li>
+                <li>Status: <%= booking.status %> </li>
+                <li>Start: <%= booking.start_date %> </li>
+                <li>End: <%= booking.end_date %> </li>
+                <li><%= link_to "Delete",
+                  booking_path(booking),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %> </li>
+              <% end %>
+            </ul>
+      <% end %>
+    </div>
+    <div class="user-info">
+      <h1>Your pictures!</h1>
     </div>
   </div>
 </div>
-<div class="container mt-5 mb-5">
-  <%= link_to "Back to Home page", root_path, class: "btn btn-primary" %>
+<div class="container-comments">
+  <div class="categories-title">
+    <h1>Reviews about your activities!</h1>
+  </div>
+    <div class="row">
+     <% current_user.activity_reviews.each do |review| %>
+      <div class="col-lg-4 col-sm-4">
+          <div class="comment">
+            <h2><%= review.content.capitalize %></h2>
+          </div>
+      </div>
+    <% end %>
+  </div>
 </div>

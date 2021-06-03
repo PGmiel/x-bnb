@@ -5,9 +5,11 @@
       <p>Quick search!</p>
         <div class="form">
           <%= simple_form_for :query_id , url: categories_path, method: :get do |f| %>
-           <div class="form-infos">
-            <%= f.input :categories, :collection => @categories.all.map(&:name), label: false %>
-            <%= f.button :submit, 'Search' %>    </div>     <% end %>
+             <div class="form-infos d-flex align-items-center">
+              <%= f.input :categories, :collection => @categories.all.map(&:name), label: false %>
+              <%= f.button :submit, 'Search' %>
+            </div>
+          <% end %>
         </div>
     </div>
   </div>
