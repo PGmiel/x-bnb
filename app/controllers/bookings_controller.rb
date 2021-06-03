@@ -40,7 +40,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to activity_path(@booking.activity)
+    redirect_to user_activities_path
   end
 
   private

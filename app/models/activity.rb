@@ -7,7 +7,7 @@ class Activity < ApplicationRecord
   has_many :categories, through: :category_activities
   has_many_attached :photos
 
-  validates :name, :description, :price, :photos, presence: true
+  validates :name, :description, :price, presence: true
 
   def avg_rating
     if self.reviews.count == 0
