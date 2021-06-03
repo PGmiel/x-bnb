@@ -1,0 +1,42 @@
+.form {
+  max-width: 8vw;
+  & .form-control {
+  border: 0px solid white !important;
+  // border-left: 2px solid black !important;
+  // border-right: 2px solid black !important;
+  // border-radius: 0 !important;
+  }
+}
+
+.container-for-form {
+  display: flex;
+  justify-content:center;
+  margin-top: 50px;
+}
+
+.container-search-banner {
+  display: flex;
+  background: white;
+  width: 30vw;
+  padding: 10px 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  & .btn-danger {
+    max-width: 8vw;
+  }
+  & p {
+    margin: 0;
+    color: black !important;
+    font-size: 1em !important;
+    opacity: 1 !important;
+    text-shadow: 0 !important;
+  }
+}
+
+.banner-position {
+  position: absolute;
+  top: 150px;
+  width: 100vw;
+}

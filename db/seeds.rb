@@ -22,34 +22,42 @@ Category.create( name: "Cycling" ),
 Category.create( name: "City" )
 ]
 
-5.times do
-  user = User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: "123123"
-    )
-end
+user = User.create(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  email: "testtest@gmail.com",
+   password: "123123"
+  )
+
+# 5.times do
+#   user = User.create!(
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     email: Faker::Internet.email,
+#     password: "123123"
+#     )
+# end
 
 
 
-20.times do
-  activity = Activity.create(
-    name: ["skiing", "kitesuring", "climbing", "via-ferrata", "thriathlon", "bike", "roller-blading", "wakeboarding", "surfing", "skateboarding", "street-luge", "kayaking"].sample,
-    description: Faker::Lorem.sentence,
-    price: rand(10..95),
-    address: "#{Faker::Address.city}, #{Faker::Address.street_address}",
-    user: User.all.sample
-    )
-  activity.save!
-  activity.categories = categories.sample(3)
-  activity.reviews = 2.times.map do 
-    Review.create!(
-      content: Faker::Lorem.sentence,
-      rating: rand(0..5),
-      user: User.all.sample,
-      activity: activity
-    )
-  end
-end
+# 20.times do
+#   activity = Activity.create(
+#     name: ["skiing", "kitesuring", "climbing", "via-ferrata", "thriathlon", "bike", "roller-blading", "wakeboarding", "surfing", "skateboarding", "street-luge", "kayaking"].sample,
+#     description: Faker::Lorem.sentence,
+#     price: rand(10..95),
+#     address: Faker::Address.full_address,
+#     user: User.all.sample
+#     )
+#   activity.save!
+#   activity.categories = categories.sample(3)
+#   activity.reviews = 2.times.map do 
+#     Review.create!(
+#       content: Faker::Lorem.sentence,
+#       rating: rand(0..5),
+#       user: User.all.sample,
+#       activity: activity
+#     )
+#   end
+# end
+
 

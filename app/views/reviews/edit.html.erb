@@ -1,0 +1,16 @@
+<div class="container-login">
+  <div class="user-login-signup">
+  <%= simple_form_for [ @activity, @review ] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :rating %>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
+
+  </div>
+  <div class="additional-section">
+    <%= link_to 'Delete', activity_review_path(@review),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %> |
+    <%= link_to 'Cancel', :back %>
+  </div>
+</div>

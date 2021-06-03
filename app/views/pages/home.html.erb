@@ -1,21 +1,30 @@
 <%= render 'shared/navbar' %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
-  <div class="container">
-      <h1>xSports bnb brings <strong>adrenaline</strong> to <strong>everyone</strong>!</h1>
-      <p>Change your life and try new extreme sports</p>
-      <a class="btn btn-flat" href="#">Learn what's new</a>
-    <div class="form">
-      <p>Quick search Here!</p>
-      <%= simple_form_for :query_id , url: categories_path, method: :get do |f| %>
-        <div class="form-infos">
-          <%= f.input :categories, :collection => @categories.all.map(&:name), label: false %>
-          <%= f.button :submit, 'Search' %>
+  <div class="container-for-form">
+    <div class="container-search-banner">
+      <p>Quick search!</p>
+        <div class="form">
+          <%= form_tag activities_path, method: :get do %>
+            <%= select_tag :category,
+            options_from_collection_for_select(Category.all, "id", "name"),
+              class: "form-control",
+              placeholder: "Find a activity"
+            %>
+          <% end %>
         </div>
-      <% end %>
+      <%= submit_tag "Search", class: "btn btn-danger" %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="banner-position">
+      <div class="container-host one">
+      <h1>xBnB</h1>
+      <h1>Brings <strong>adrenaline</strong> to <strong>everyone</strong>!</h1>
+      <p>Change your life and try the eXtreme</p>
+      </div>
     </div>
   </div>
 </div>
-
 
 <div class="categories">
   <div class="categories-title">
@@ -45,18 +54,4 @@
     </div>
   </div>
 </div>
-<div class="footer">
-    <div class="footer-copyright">
-      <!-- © 2021 xSport bnb, Inc • Confidentialité • Conditions générales • Plan du site • Infos sur l'entreprise -->
-      <a href="#">© 2021 xSport bnb, Inc •</a>
-      <a href="#">Confidentialité •</a>
-      <a href="#">Conditions générales •</a>
-      <a href="#">Plan du site •</a>
-      <a href="#">Infos sur l'entreprise</a>
-    </div>
-    <div class="footer-links">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-    </div>
-</div>
+

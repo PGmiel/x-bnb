@@ -1,0 +1,28 @@
+.container-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500vw;
+  padding: 4em 0;
+}
+
+.user-login-signup {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 1em 1em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: clamp(40%, 50%, 90%);
+  margin-bottom: 1em;
+}
+
+.login-title {
+  text-align: center;
+}
+
+.additional-section {
+  width: clamp(40%, 50%, 90%);
+  padding: 1em 1em;
+  border-top: 1px solid lightgrey;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}

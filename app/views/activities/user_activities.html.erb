@@ -5,5 +5,8 @@
       <li><%= link_to activity.name, activity_path(activity) %> </li>
     <% end %>
   </ul>
-  <%= link_to "Back to Home page", root_path, class: "btn btn-primary" %>
+  <div>
+    <%= link_to "Create an activity", new_activity_path, class: "btn btn-primary" %>
+    <%= link_to "Back to Home page", root_path, class: "btn btn-primary" %>
+  </div>
 </div>

@@ -27,24 +27,43 @@
   opacity: 0.8;
 }
 
-.container-host {
-  width: 50%;
-  max-height: 30vh;
-  margin: 0;
-  padding: 0.5em;
-  & h1 {
-    border-right: 3px solid white;
-  }
-}
-
-.container-host > .two {
-  display: flex;
-  flex-direction: column;
-  & a {
-    margin: 5px;
-  }
-}
-
 .flex-host {
   display: flex;
+  max-height: 30vh;
+  justify-content: center;
+  align-items: center;
 }
+
+.container-host {
+  width: 50%;
+  margin: 0;
+  padding: 0.5em;
+  & p {
+    margin: 0;
+  }
+}
+
+.container-host-two {
+  width: 50%;
+  margin: 0;
+  padding: 0.5em;
+  display: grid;
+  grid-auto-flow: column;
+  & a {
+    margin: 5px;
+    justify-text: center;
+  }
+}
+
+@media (max-width: 770px) {
+  .container-host-two {
+    grid-auto-flow: row;
+  }
+}
+
+
+
+
+
+
+
