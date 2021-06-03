@@ -50,6 +50,7 @@ class ActivitiesController < ApplicationController
 
     # no need for app/views/activities/destroy.html.erb
     redirect_to activities_path
+  end
 
 
   def user_activities
