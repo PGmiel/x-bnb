@@ -36,6 +36,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  position: absolute;
 }
 
 .card p {
@@ -60,28 +61,36 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
+  margin-top: 5px;
+  position: absolute;
+  top: -80px;
+  left: 10px;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 10px;
+  width: 150px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  position: absolute;
+  top: -25px;
 }
 
 .card-product .card-product-infos {
   padding: 20px;
   color: black;
+  position: relative;
 }
 
 .card-product {
   background-size: cover;
   background-position: center;
-  height: 250px;
+  height: 200px;
   width: 600px;
 
   border-radius: 4px;
@@ -99,9 +108,11 @@
 
 .card-product .card-product-infos .card-product-infos-price {
   position: absolute;
-  right: 25px;
-  bottom: 20px;
+  bottom: -20px;
+  right: -220px;
   width: 40px;
+  font-size: 20px;
+
 }
 
 .cards-products {
@@ -110,6 +121,7 @@
   grid-gap: 16px;
   padding:  16px;
   flex-grow: 1;
+  height: 300px;
 }
 
 .card-trip {
@@ -152,4 +164,8 @@
   right: 13px;
   top: -13px;
   width: 40px;
+}
+
+.title-showpage {
+  padding: 20px;
 }
