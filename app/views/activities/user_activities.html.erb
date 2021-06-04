@@ -15,7 +15,7 @@
       <h3>My activities</h3>
       <% if current_user.activities.count == 0 %>
           <h5>Create your first activity</h5>
-          <%= link_to "Create an activity!", new_activity_path, class: "btn btn-primary" %>
+          <%= link_to "Create an activity!", new_activity_path, class: "btn btn-dark" %>
       <% else %>
         <div class="flex-bookings">
           <h5>Total Activities: <%= current_user.activities.count %></h5>
