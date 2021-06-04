@@ -37,3 +37,11 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initSelect2();
 })
+
+import { loadDynamicBannerText } from '../components/banner';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your JS functions here
+  // [...]
+  loadDynamicBannerText();
+});

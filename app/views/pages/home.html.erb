@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('<%= image_path ["background1", "background2", "background3", "background4", "background5",  "background6",  "background7"].sample %>')">
   <div class="container-for-form">
     <div class="container-search-banner">
       <p>Go Here!</p>
@@ -18,7 +18,9 @@
       <div class="container-host one">
       <h1>xBnB</h1>
       <h1>Brings <strong>adrenaline</strong> to <strong>everyone</strong>!</h1>
-      <p>Change your life and try the eXtreme</p>
+        <p>
+        <span id="banner-typed-text"></span>
+        </p>
       </div>
     </div>
   </div>
