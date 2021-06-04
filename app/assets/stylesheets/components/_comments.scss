@@ -3,7 +3,8 @@
   background: black;
   & h1{
     color: white;
-    padding-top: 1em;
+    padding: 0.5em 0;
+    margin-bottom: 0;
   }
 }
 
@@ -33,5 +34,19 @@
   &:hover {
     background: black !important;
     color: white;
+  }
+}
+
+.comment-profile {
+  color: black;
+  display: grid;
+  margin-top: 2em;
+  grid-template-columns: repeat(1fr, 1fr);
+  gap: 1em;
+  justify-content: space-around;
+  align-items: center;
+  & h2 {
+    margin: 0;
+    font-size: 1em;
   }
 }

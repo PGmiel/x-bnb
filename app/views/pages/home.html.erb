@@ -2,7 +2,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
   <div class="container-for-form">
     <div class="container-search-banner">
-      <p>Quick search!</p>
+      <p>Go Here!</p>
         <div class="form">
           <%= simple_form_for :query_id , url: categories_path, method: :get do |f| %>
              <div class="form-infos d-flex align-items-center">
@@ -32,12 +32,8 @@
   <% @categories.each do |category| %>
     <div class="col-lg-3 col-md-6 col-sm-6">
       <div class="card">
+        <%= link_to category.name, category_path(category), class: "cat-btn"  %>
         <%= cl_image_tag ("bike_kjfsvx") %>
-        <div class="card-infos">
-          <div>
-            <h2><%= link_to category.name, category_path(category)  %></h2>
-          </div>
-        </div>
       </div>
     </div>
   <% end %>

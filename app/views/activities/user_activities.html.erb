@@ -1,7 +1,18 @@
+
 <div class="container">
   <div class="container-profile">
+    <div class="banner-profile" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
+      <div class="profile-info">
+        <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
+        <div class="profile-details">
+          <h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
+          <p><%= current_user.email %></p>
+          <%= link_to "Edit",  edit_user_registration_path(current_user), class: "btn btn-dark" %>
+        </div>
+      </div>
+  </div>
     <div class="activities">
-      <h2>My activities</h2>
+      <h3>My activities</h3>
       <% if current_user.activities.count == 0 %>
           <h5>Create your first activity</h5>
           <%= link_to "Create an activity!", new_activity_path, class: "btn btn-primary" %>
@@ -26,7 +37,7 @@
       <% end %>
     </div>
     <div class="bookings">
-      <h2>My Bookings</h2>
+      <h3>My Bookings</h3>
       <% if current_user.bookings.count == 0 %>
         <h5>Make your first Booking!</h5>
         <%= link_to 'Start the search', root_path %>
@@ -51,21 +62,25 @@
       <% end %>
     </div>
     <div class="user-info">
-      <h1>Your pictures!</h1>
+      <% if current_user.activity_reviews.count == 0 %>
+        <h2 class="text-center"><%= link_to "Browse activities to Review!", root_path %></h2>
+      <% else %>
+        <div class="comment-section text-center">
+            <h2>Reviews about your activities!</h2>
+          </div>
+            <div class="row">
+             <% current_user.activity_reviews.sample(6).each do |review| %>
+              <div class="col-lg-4 col-sm-4">
+                  <div class="comment-profile">
+                    <h2><%= review.user.first_name.capitalize %> Says:</h2>
+                    <h2><strong><%= review.content.capitalize %></strong></h2>
+                  </div>
+              </div>
+             <% end %>
+            </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-<div class="container-comments">
-  <div class="categories-title">
-    <h1>Reviews about your activities!</h1>
-  </div>
-    <div class="row">
-     <% current_user.activity_reviews.each do |review| %>
-      <div class="col-lg-4 col-sm-4">
-          <div class="comment">
-            <h2><%= review.content.capitalize %></h2>
-          </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+
