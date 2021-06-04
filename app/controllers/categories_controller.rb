@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @categories = Category.all
     @category = Category.find(params[:id])
     # @activities = Activity.all
     @markers = @category.activities.geocoded.map do |activity|

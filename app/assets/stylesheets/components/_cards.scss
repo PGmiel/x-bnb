@@ -7,6 +7,23 @@
   // max-width:
   border-radius: 5px;
   border: none;
+  position: relative;
+  text-align: center;
+  & .cat-btn {
+    text-decoration: none;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: rgba(52,58,64, 0.2);
+    border-radius: 5px;
+    width: 20vw;
+    &:hover {
+      color: red;
+      font-weight: bold;
+    }
+  }
 }
 
 .card > img {
@@ -38,6 +55,7 @@
 .card-product img {
   height: 100%;
   width: 280px;
+
   object-fit: cover;
 }
 
@@ -65,6 +83,7 @@
   background-position: center;
   height: 250px;
   width: 600px;
+
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;

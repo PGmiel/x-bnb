@@ -34,6 +34,7 @@
 
 .categories{
   padding: 3em;
+  background-color: $background-color;
 }
 
 .categories-title {
@@ -42,7 +43,7 @@
 
 .host-container {
   padding: 3em 3em;
-  background:black;
+  background-color: rgba(200,200,200,0.1);
 }
 
 .become-host {
