@@ -1,6 +1,6 @@
 <div class="container mt-5">
-  <h2> List of Activities for <%= @category.name %></h2>
-      <div class="container-search-banner">
+  <h2 class='title-showpage'> List of Activities for <%= @category.name %></h2>
+      <div id="form-cate"  class="container-search-banner">
       <p>Go Here!</p>
         <div class="form">
           <%= simple_form_for :query_id , url: categories_path, method: :get do |f| %>
@@ -18,10 +18,13 @@
         
           
             <div class="card-product">
-              cl_image_tag activity.photos.first.key%>
+              <%=cl_image_tag activity.photos.first.key%>
                 <div class="card-product-infos">
                   <h2><%= link_to activity.name.capitalize, activity_path(activity) %></h2>
-                  <p> <strong><%=activity.address.capitalize%></strong > <span class='card-product-infos-price'>Price <%=activity.price%>€</span></p>
+                  <p class='w-200'> 
+                  <strong class='text-wrap'><%=activity.description.capitalize%></strong > 
+                  </p>
+                  <span class='card-product-infos-price'><strong>Price</strong> <strong><%=activity.price%></strong>€</span>
                 </div>
             </div>    
        

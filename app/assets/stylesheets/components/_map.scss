@@ -1,3 +1,7 @@
+#form-cate {
+  margin-left: 20px;
+}
+
 .main-container {
   display: grid;
   grid-template-columns: 1fr 600px;
@@ -6,6 +10,10 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+}
+
+.mapboxgl-canvas {
+  margin-top: 22px;
 }
 
 #map {
