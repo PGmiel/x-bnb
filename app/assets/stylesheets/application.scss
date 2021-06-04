@@ -16,7 +16,7 @@
 @import 'select2/dist/css/select2';
 
 body {
-  background-color: $background-color;
+  background-color: $background-color !important;
   padding-top: 70px;
 }
 
@@ -34,4 +34,8 @@ h5 {
 
 p {
   color: $gray;
+}
+
+a {
+  color: $gray-blue !important;
 }
