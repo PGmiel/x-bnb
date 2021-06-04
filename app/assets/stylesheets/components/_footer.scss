@@ -13,7 +13,7 @@
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: $dark-blue;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -22,18 +22,16 @@
 .footer-links a:hover {
   opacity: 1;
 }
-.footer .fa-heart {
-  color: #D23333;
-}
+
 
 .footer a {
-  color: black;
+  color: $dark-blue;
   opacity: 0.15;
   text-decoration: none;
 }
 
 .footer a:hover{
   text-decoration: none;
-  color: black;
+  color: $dark-blue;
   opacity: 1;
 }
