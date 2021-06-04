@@ -1,8 +1,8 @@
 .container-comments {
   padding: 0 3em;
-  background: black;
+  background: $dark-blue;
   & h1{
-    color: white;
+    color: $white;
     padding: 0.5em 0;
     margin-bottom: 0;
   }
@@ -20,8 +20,8 @@
 
 .comment {
   height: 200px;
-  background: black !important;
-  color: black;
+  background: $dark-blue !important;
+  color: $dark-blue;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -32,13 +32,13 @@
     font-size: 1.5em;
   }
   &:hover {
-    background: black !important;
-    color: white;
+    background: $dark-blue !important;
+    color: $white;
   }
 }
 
 .comment-profile {
-  color: black;
+  color: $dark-blue;
   display: grid;
   margin-top: 2em;
   grid-template-columns: repeat(1fr, 1fr);

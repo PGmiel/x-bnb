@@ -1,6 +1,6 @@
 .card {
   overflow: hidden;
-  background: white;
+  background: $white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-top: 2em;
   // width: clamp(20ch, 50%, 40ch);
@@ -23,7 +23,9 @@
     left: 50%;
     padding: 1em 0;
     transform: translate(-50%, -50%);
-    color: white;
+    color: $white;
+    background: rgba(52,58,64, 0.2);
+    border-radius: 5px;
     width: 20vw;
     font-size: 2em;
     transition: 0.2s;
@@ -40,6 +42,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  position: absolute;
 }
 
 .card p {
@@ -58,52 +61,64 @@
 
 .card-product img {
   height: 100%;
-  width: 200px;
+  width: 280px;
+
   object-fit: cover;
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
+  margin-top: 5px;
+  position: absolute;
+  top: -80px;
+  left: 10px;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 10px;
+  width: 150px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  position: absolute;
+  top: -25px;
 }
 
 .card-product .card-product-infos {
   padding: 20px;
-  color: black;
+  position: relative;
+  color: $dark-blue;
 }
 
 .card-product {
   background-size: cover;
   background-position: center;
   height: 200px;
-  width: 500px;
+  width: 600px;
+
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   font-size: 22px;
-  color: white;
+  color: $white;
   font-weight: bolder;
   overflow: hidden;
-  background: white;
+  background: $white;
   margin: 5px;
   position: relative;
 }
 
 .card-product .card-product-infos .card-product-infos-price {
   position: absolute;
-  right: 25px;
-  bottom: 20px;
+  bottom: -20px;
+  right: -220px;
   width: 40px;
+  font-size: 20px;
+
 }
 
 .cards-products {
@@ -112,11 +127,12 @@
   grid-gap: 16px;
   padding:  16px;
   flex-grow: 1;
+  height: 300px;
 }
 
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: $white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 100%;
   width: 100%;
@@ -154,4 +170,8 @@
   right: 13px;
   top: -13px;
   width: 40px;
+}
+
+.title-showpage {
+  padding: 20px;
 }
