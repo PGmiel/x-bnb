@@ -10,7 +10,7 @@
 
 .banner h1 {
   margin: 0;
-  color: white;
+  color: $white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
@@ -18,13 +18,13 @@
 
 .banner p {
   font-size: 20px;
-  color: white;
+  color: $white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .banner a {
-  color: white;
+  color: $white;
   opacity: 0.8;
 }
 
@@ -39,24 +39,25 @@
 
 .categories-title {
   text-align: center;
+  color: $dark-blue;
 }
 
 .host-container {
   padding: 3em 3em;
-  background-color: rgba(200,200,200,0.1);
+  background-color: $background-color;
 }
 
 .become-host {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  height: 100vh;
+  height: 90vh;
   border-radius: 12px;
 }
 
 .become-host h1 {
   margin: 0;
-  color: white;
+  color: $white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
@@ -64,13 +65,13 @@
 
 .become-host p {
   font-size: 20px;
-  color: white;
+  color: $white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .become-host a {
-  color: white;
+  color: $white;
   opacity: 0.8;
 }
 
