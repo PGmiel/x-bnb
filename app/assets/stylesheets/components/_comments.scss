@@ -14,7 +14,6 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  overflow: hidden;
   border-radius: 12px;
 }
 
@@ -27,13 +26,13 @@
   justify-content: space-around;
   align-items: center;
   transition: 0.5s;
-  opacity: 1;
+  opacity: 0.5;
   & h2 {
     font-size: 1.5em;
+    color: white;
   }
   &:hover {
-    background: $dark-blue !important;
-    color: $white;
+    opacity: 1;
   }
 }
 

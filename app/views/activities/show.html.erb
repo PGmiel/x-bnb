@@ -98,7 +98,7 @@
             <%= link_to 'Edit', edit_activity_path(@activity) %> |
           <% end %>
           <% if current_user == @activity.user %>
-            <%= link_to "Delete #{@activity.name}",
+            <%= link_to "Delete",
                   activity_path(@activity),
                   method: :delete,
                   data: { confirm: "Are you sure?" } %> |
