@@ -1,4 +1,4 @@
-
+<%= link_to activity_path(activity) do %>
 <div class="card-trip">
   <%= cl_image_tag activity.photos.first.key%>
 
@@ -11,3 +11,4 @@
     <%= cl_image_tag activity.user.photo.key, class: "card-trip-user avatar-bordered"%> 
   </div>
 </div>
+<%end%>

@@ -2,6 +2,12 @@
   margin-left: 20px;
 }
 
+.containerr {
+  margin: 48px 100px !important;
+  display: flex;
+  flex-direction: column;
+}
+
 .main-container {
   display: grid;
   grid-template-columns: 1fr 600px;
