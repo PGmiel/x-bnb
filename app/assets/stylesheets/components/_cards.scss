@@ -127,3 +127,10 @@
   align-items: flex-end;
   position: relative;
 }
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 13px;
+  top: -13px;
+  width: 40px;
+}
