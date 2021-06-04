@@ -28,20 +28,22 @@
 
 <div class="categories">
   <div class="categories-title">
-    <h1>Discover the categories!</h1>
+    <h1 id="middlepage">Discover the categories!</h1>
   </div>
   <div class="row">
   <% @categories.each do |category| %>
     <div class="col-lg-3 col-md-6 col-sm-6">
+    <%= link_to category_path(category) do %>
       <div class="card">
-        <%= link_to category.name, category_path(category), class: "cat-btn"  %>
-        <%= cl_image_tag ("bike_kjfsvx") %>
+        <span class="cat-btn"><%= category.name %></span>
+        <%= image_tag category.image_name %>
       </div>
+    <% end %>
     </div>
   <% end %>
   </div>
 </div>
-<div class="host-container">
+<div class="host-container" id="downpage">
   <div class="become-host" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "become_host.jpg" %>);">
     <div class="container">
       <h1>Become a Host</h1>
