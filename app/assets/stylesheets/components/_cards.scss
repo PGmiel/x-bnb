@@ -1,6 +1,6 @@
 .card {
   overflow: hidden;
-  background: white;
+  background: $white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-top: 2em;
   // width: clamp(20ch, 50%, 40ch);
@@ -15,7 +15,7 @@
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: $white;
     background: rgba(52,58,64, 0.2);
     border-radius: 5px;
     width: 20vw;
@@ -83,8 +83,8 @@
 
 .card-product .card-product-infos {
   padding: 20px;
-  color: black;
   position: relative;
+  color: $dark-blue;
 }
 
 .card-product {
@@ -98,10 +98,10 @@
   display: flex;
   align-items: center;
   font-size: 22px;
-  color: white;
+  color: $white;
   font-weight: bolder;
   overflow: hidden;
-  background: white;
+  background: $white;
   margin: 5px;
   position: relative;
 }
@@ -126,7 +126,7 @@
 
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: $white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 100%;
   width: 100%;
