@@ -1,16 +1,23 @@
-<div class="container-login">
-  <div class="user-login-signup">
-  <%= simple_form_for [ @activity, @review ] do |f| %>
-    <%= f.input :content %>
-    <%= f.input :rating, as: :select, collection: [0, 1, 2, 3, 4, 5] %>
-    <%= f.submit "Update", class: "btn btn-primary" %>
-  <% end %>
+<div class="container mt-5">
+  <div class="container-login">
+    <h2 class="text-center pb-3">Make your change!</h2>
 
-  </div>
-  <div class="additional-section">
-    <%= link_to 'Delete', activity_review_path(@review),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %> |
-    <%= link_to 'Cancel', :back %>
+    <div class="user-login-signup">
+    <%= simple_form_for [ @activity, @review ] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, as: :select, collection: [0, 1, 2, 3, 4, 5] %>
+      <%= f.submit "Update", class: "btn btn-dark" %>
+    <% end %>
+
+    </div>
+    <div class="additional-section">
+      <%= link_to 'Delete', activity_review_path(@review),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %> |
+      <%= link_to 'Cancel', :back %>
+    </div>
+    <div class="container-new-review">
+
+    </div>
   </div>
 </div>

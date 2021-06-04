@@ -1,12 +1,18 @@
-<div class="container-login">
-  <div class="user-login-signup">
-    <%= simple_form_for [ @activity, @review ] do |f| %>
-      <%= f.input :content %>
-      <%= f.input :rating, as: :select, collection: [0, 1, 2, 3, 4, 5] %>
-      <%= f.submit "Submit review", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-  <div class="additional-section">
-    <%= link_to 'Back', activities_path %>
+<div class="container mt-5">
+  <div class="container-login">
+    <h2 class="text-center pb-3">How was your experience?</h2>
+    <div class="user-login-signup">
+      <%= simple_form_for [ @activity, @review ] do |f| %>
+        <%= f.input :content %>
+        <%= f.input :rating, as: :select, collection: [0, 1, 2, 3, 4, 5] %>
+        <%= f.submit "Submit review", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+    <div class="additional-section">
+      <%= link_to 'Back', activities_path %>
+    </div>
+    <div class="container-new-review">
+
+    </div>
   </div>
 </div>
