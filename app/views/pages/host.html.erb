@@ -17,11 +17,10 @@
     <h1>Reviews from our users!</h1>
   </div>
     <div class="row">
-      <% @reviews.all.sample(4).each do |review| %>
+      <% @reviews.all.sample(3).each do |review| %>
       <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="card">
-          <div class="comment-image">
-            <%= cl_image_tag review.activity.photos.first.key if review.activity.photos.first.present?  %>
+          <div class="comment-image" style="background-image: url(<%= cl_image_path review.activity.photos.first.key, height: 300, crop: :fill if review.activity.photos.first.present? %>);">
           </div>
         </div>
           <div class="comment">
