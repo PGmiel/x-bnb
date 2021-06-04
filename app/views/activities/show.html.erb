@@ -45,6 +45,13 @@
   </div>
 </div>
 
+<div class="container d-flex mb-2 mt-2 justify-content-between">
+  <% @activity.photos.each do |photo| %>
+    <div class="picture p-2">
+      <%= cl_image_tag photo.key, height: 300, crop: :fill, class:"img-fluid"%>
+    </div>
+  <% end %>
+</div>
 <!--
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
