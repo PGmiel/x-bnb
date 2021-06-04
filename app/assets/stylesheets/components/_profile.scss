@@ -35,7 +35,11 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-bottom: 1em;
   grid-area: bottom;
-  height: 50vh;
+  max-height: 50vh;
+  & p {
+    margin: 0;
+    text-align: center;
+  }
 }
 
 .banner-profile {
@@ -72,6 +76,21 @@
   }
 }
 
+.square-for {
+  background: rgb(52,58,64);
+  border-radius: 5px;
+  padding: 1em 1em;
+  color: white;
+  & a {
+    color: white;
+    font-size: 1.5em;
+  }
+}
+
+.square-for a:hover {
+  color: white;
+  text-decoration: none;
+}
 
 
 

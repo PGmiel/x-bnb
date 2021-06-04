@@ -22,58 +22,72 @@
           <%= link_to "Add more!", new_activity_path %>
         </div>
           <p><em><strong>Details</strong></em></p>
-          <ul class="list-inline">
-            <% current_user.activities.each do |activity| %>
-              <li><%= link_to activity.name, activity_path(activity) %></li>
-              <li>Rented to
-                  <ul>
-                    <% activity.bookings.each do |booking| %>
-                      <li><%= booking.user.first_name %></li>
-                    <% end %>
-                  </ul>
-              </li>
-            <% end %>
-          </ul>
-      <% end %>
+          <div class="square-for">
+            <ul class="list-inline">
+              <% current_user.activities.each do |activity| %>
+                <li><%= link_to activity.name, activity_path(activity) %></li>
+                <li>Rented to:
+                    <ul>
+                      <% activity.bookings.each do |booking| %>
+                        <li><%= booking.user.first_name %></li>
+                      <% end %>
+                    </ul>
+                </li>From:
+                     <ul>
+                      <% activity.bookings.each do |booking| %>
+                        <li><%= booking.start_date %></li>
+                        <li><%= booking.end_date %></li>
+                      <% end %>
+                    </ul>
+              <% end %>
+            </ul>
+        <% end %>
+        </div>
     </div>
     <div class="bookings">
       <h3>My Bookings</h3>
       <% if current_user.bookings.count == 0 %>
         <h5>Make your first Booking!</h5>
-        <%= link_to 'Start the search', root_path %>
+        <%= link_to 'Start the search', root_path(anchor: "middlepage") %>
         <% else %>
         <div class="flex-bookings">
             <h5>Total Bookings: <%= current_user.bookings.count %></h5>
             <%= link_to 'Book More!', root_path %>
         </div>
             <p><em><strong>Details</strong></em></p>
+            <div class="square-for">
             <ul class="list-inline">
               <% current_user.bookings.each do |booking| %>
-                <li>For: <%= booking.activity.name %></li>
-                <li>Status: <%= booking.status %> </li>
-                <li>Start: <%= booking.start_date %> </li>
-                <li>End: <%= booking.end_date %> </li>
                 <li><%= link_to "Delete",
-                  booking_path(booking),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %> </li>
-              <% end %>
+                      booking_path(booking),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" } %></li>
+                <li>Activity: <%= booking.activity.name %></li>
+                <li>Status: <%= booking.status %> </li>
+                <li> From:
+                     <ul>
+                        <li>Start: <%= booking.start_date %> </li>
+                        <li>End: <%= booking.end_date %> </li>
+                      </ul>
+                </li>
             </ul>
+          <% end %>
       <% end %>
+      </div>
     </div>
     <div class="user-info">
       <% if current_user.activity_reviews.count == 0 %>
-        <h2 class="text-center"><%= link_to "Browse activities to Review!", root_path %></h2>
+        <p>No reviews yet! <%= link_to "Sell an Activity!", new_activity_path, class: "btn btn-dark" %></p>
       <% else %>
         <div class="comment-section text-center">
-            <h2>Reviews about your activities!</h2>
+            <h3>Reviews about your activities!</h3>
           </div>
             <div class="row">
              <% current_user.activity_reviews.sample(6).each do |review| %>
               <div class="col-lg-4 col-sm-4">
                   <div class="comment-profile">
-                    <h2><%= review.user.first_name.capitalize %> Says:</h2>
-                    <h2><strong><%= review.content.capitalize %></strong></h2>
+                    <h4><%= review.user.first_name.capitalize %> Says:</h4>
+                    <h4><strong><%= review.content.capitalize %></strong></h4>
                   </div>
               </div>
              <% end %>
