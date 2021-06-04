@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('<%= image_path ["background1", "background2", "background3", "background4", "background5",  "background6",  "background7"].sample %>')">
   <div class="container-for-form">
     <div class="container-search-banner">
       <p>Quick search!</p>
@@ -34,7 +34,7 @@
   <% @categories.each do |category| %>
     <div class="col-lg-3 col-md-6 col-sm-6">
       <div class="card">
-        <%= cl_image_tag ("bike_kjfsvx") %>
+        <%= image_tag category.image_name %>
         <div class="card-infos">
           <div>
             <h2><%= link_to category.name, category_path(category)  %></h2>
