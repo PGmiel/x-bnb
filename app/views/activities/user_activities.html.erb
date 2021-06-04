@@ -86,7 +86,7 @@
              <% current_user.activity_reviews.sample(6).each do |review| %>
               <div class="col-lg-4 col-sm-4">
                   <div class="comment-profile">
-                    <p><%= review.user.first_name.capitalize %> Says:</p>
+                    <p class="text-left"><%= review.user.first_name.capitalize %> Says:</p>
                     <p class="text-left"><strong><%= review.content.capitalize %></strong></p>
                   </div>
               </div>
