@@ -14,7 +14,7 @@ Activity.destroy_all
 User.destroy_all
 
 categories = [
-Category.create( name: "Water" ),
+Category.create( name: "Water"),
 Category.create( name: "Nature" ),
 Category.create( name: "Running" ),
 Category.create( name: "Motor" ),
@@ -55,7 +55,7 @@ user = User.create!(
 #     )
 #   activity.save!
 #   activity.categories = categories.sample(3)
-#   activity.reviews = 2.times.map do 
+#   activity.reviews = 2.times.map do
 #     Review.create!(
 #       content: Faker::Lorem.sentence,
 #       rating: rand(0..5),

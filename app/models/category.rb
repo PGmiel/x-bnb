@@ -5,4 +5,5 @@ class Category < ApplicationRecord
   def image_name
     "#{self.name.downcase}.jpg"
   end
+
 end
