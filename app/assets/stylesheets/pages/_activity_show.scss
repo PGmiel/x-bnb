@@ -1,18 +1,13 @@
 .head {
   margin: 20px;
-
-
 }
 
 .summary {
   display: flex;
   justify-content: space-between;
-
-
 }
 
 .activity-info {
-
 
 }
 
@@ -20,8 +15,6 @@
   display: flex;
   justify-content: space-between;
   padding: 5px;
-
-
 }
 
 .pictures-box-new {
@@ -39,7 +32,7 @@
   align-items: center;
   justify-content: space-around;
   font-size: 22px;
-  color: white;
+  color: $white;
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }

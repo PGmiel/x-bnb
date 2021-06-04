@@ -16,6 +16,7 @@
   border-radius: 5px;
   border: 1px solid lightgrey;
   padding: 1em 1em;
+  background-color: $white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   width: 100%;
   margin-bottom: 1em;
@@ -77,23 +78,22 @@
 }
 
 .square-for {
-  background: rgb(52,58,64);
+  background: rgba(101,142,156, 0.2);
   border-radius: 5px;
   padding: 1em 1em;
-  color: white;
   & a {
-    color: white;
+    color: $white;
     font-size: 1.5em;
   }
 }
 
 .square-for a:hover {
-  color: white;
   text-decoration: none;
 }
 
-
-
+.comment-profile {
+  margin: 1em 0;
+}
 
 
 

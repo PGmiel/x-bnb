@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="container-profile">
-    <div class="banner-profile" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
+    <div class="banner-profile" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= asset_path "profil-banner.jpg" %>')">
       <div class="profile-info">
         <%= cl_image_tag current_user.photo.key, class: "avatar-large" %>
         <div class="profile-details">
@@ -86,8 +86,8 @@
              <% current_user.activity_reviews.sample(6).each do |review| %>
               <div class="col-lg-4 col-sm-4">
                   <div class="comment-profile">
-                    <h4><%= review.user.first_name.capitalize %> Says:</h4>
-                    <h4><strong><%= review.content.capitalize %></strong></h4>
+                    <p><%= review.user.first_name.capitalize %> Says:</p>
+                    <p class="text-left"><strong><%= review.content.capitalize %></strong></p>
                   </div>
               </div>
              <% end %>
