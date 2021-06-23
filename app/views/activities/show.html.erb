@@ -45,6 +45,17 @@
   </div>
 </div>
 
+
+ <div id="carouselExampleIndicators" class="carousel w-50 align-self-center" data-ride="carousel";>
+  <ol class="carousel-indicators">
+    <% @activity.photos.each_with_index do |photo, index| %>
+    <li data-target="#carouselExampleIndicators" data-slide-to=index  class="active"></li>
+    <% end %>
+  </ol>
+  <div class="carousel-inner w-500 m-auto">
+  <% @activity.photos.each_with_index do |photo, i| %>
+    <div class="carousel-item <%= "active" if i == 0  %>">
+      <%= cl_image_tag photo.key, height: 400, crop: :fill, class:"img-fluid m-auto"%>
 <div class="container d-flex mb-2 mt-2 justify-content-between">
   <% @activity.photos.each do |photo| %>
     <div class="picture p-2">
@@ -74,18 +85,10 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
- -->
-
-  <div class="container">
     <div class="row">
       <div class= "col-8">
         <div class="container">
-          <h2><%= @activity.name %></h2>
           <p><%= @activity.description %></p>
-          <p><%= @activity.address %></p>
-          <p><%= @activity.price %></p>
-
 
 
           <%= link_to 'Home', root_path %> |
@@ -136,9 +139,12 @@
         <% end %>
       </div>
     </div>
-
-
   </div>
+<div class="pictures">
+    <% @activity.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 500, crop: :fill, class:"grow"%>
+      <% end %>
+</div>
 </div>
 </div>
 
