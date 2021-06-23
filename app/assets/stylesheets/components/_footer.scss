@@ -7,6 +7,9 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   flex-grow: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 .footer-links {
   display: flex;
@@ -35,3 +38,4 @@
   color: $dark-blue;
   opacity: 1;
 }
+
