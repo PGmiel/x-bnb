@@ -1,8 +1,8 @@
 <%= render 'shared/navbar' %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path "banner_rv4zbx" %>')">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('<%= image_path ["background1.jpg", "background2.jpg", "background3.jpg", "background4.jpg", "background5.jpg",  "background6.jpg",  "background7.jpg"].sample %>')">
   <div class="container-for-form">
     <div class="container-search-banner">
-      <p>Quick search!</p>
+      <p>Go Here!</p>
         <div class="form">
           <%= simple_form_for :query_id , url: categories_path, method: :get do |f| %>
              <div class="form-infos d-flex align-items-center">
@@ -18,7 +18,9 @@
       <div class="container-host one">
       <h1>xBnB</h1>
       <h1>Brings <strong>adrenaline</strong> to <strong>everyone</strong>!</h1>
-      <p>Change your life and try the eXtreme</p>
+        <p>
+        <span id="banner-typed-text"></span>
+        </p>
       </div>
     </div>
   </div>
@@ -26,25 +28,23 @@
 
 <div class="categories">
   <div class="categories-title">
-    <h1>Discover the categories!</h1>
+    <h1 id="middlepage">Discover the categories!</h1>
   </div>
   <div class="row">
   <% @categories.each do |category| %>
     <div class="col-lg-3 col-md-6 col-sm-6">
+    <%= link_to category_path(category) do %>
       <div class="card">
-        <%= cl_image_tag ("bike_kjfsvx") %>
-        <div class="card-infos">
-          <div>
-            <h2><%= link_to category.name, category_path(category)  %></h2>
-          </div>
-        </div>
+        <span class="cat-btn"><%= category.name %></span>
+        <%= image_tag category.image_name %>
       </div>
+    <% end %>
     </div>
   <% end %>
   </div>
 </div>
-<div class="host-container">
-  <div class="become-host" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "become_host.jpg" %>);">
+<div class="host-container" id="downpage">
+  <div class="become-host" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path "car-host.jpg" %>);">
     <div class="container">
       <h1>Become a Host</h1>
       <p>Earn extra income and unlock new opportunities by sharing your gear.</p>

@@ -1,9 +1,7 @@
-<div class="container">
+<div class="container mt-5">
   <div class="container-login">
+    <h2 class="text-center pb-3">Connexion</h2>
     <div class="user-login-signup">
-      <div class="login-title">
-        <h2>Connexion</h2>
-      </div>
       <div class="login-content">
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-inputs">
@@ -24,6 +22,9 @@
     </div>
     <div class="additional-section">
         <%= render "devise/shared/links" %>
+    </div>
+    <div class="container-new-review">
+
     </div>
   </div>
 </div>
