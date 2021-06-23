@@ -14,12 +14,9 @@
         </div>
     </div>
   <div class='main-container'>
-    <div class='cards-products'>
-      
+    <div class='cards-product'>      
       <% @category.activities.first(10).each do |activity| %>
-        
-          
-            <div class="card-product">
+          <div class="card-product">
               <%=cl_image_tag activity.photos.first.key%>
                 <div class="card-product-infos">
                   <h2><%= link_to activity.name.capitalize, activity_path(activity) %></h2>
@@ -29,7 +26,6 @@
                   <span class='card-product-infos-price'><strong>Price</strong> <strong><%=activity.price%></strong>€</span>
                 </div>
             </div>    
-       
       <% end %>
      
     </div>
