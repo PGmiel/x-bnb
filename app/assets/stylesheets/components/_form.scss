@@ -1,10 +1,12 @@
 .form {
-  max-width: 8vw;
+  max-width: 70%;
   & .form-control {
-  border: 0px solid white !important;
+  border: 0px solid $white !important;
   // border-left: 2px solid black !important;
   // border-right: 2px solid black !important;
   // border-radius: 0 !important;
+  } & .form-group {
+    margin: 0;
   }
 }
 
@@ -16,19 +18,20 @@
 
 .container-search-banner {
   display: flex;
-  background: white;
-  width: 30vw;
-  padding: 10px 15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 5px;
   justify-content: space-between;
+  background: rgba(101,142,156, 0.4);
+  width: 25vw;
+  padding: 10px 15px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.06);
+  border-radius: 5px;
   align-items: center;
-  & .btn-danger {
-    max-width: 8vw;
+  & .btn {
+    color: $white;
+    margin-left: 1em;
   }
   & p {
     margin: 0;
-    color: black !important;
+    color: $white !important;
     font-size: 1em !important;
     opacity: 1 !important;
     text-shadow: 0 !important;

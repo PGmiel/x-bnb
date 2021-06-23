@@ -1,5 +1,18 @@
-<div class="container mt-5">
-  <h2> List of Activities for <%= @category.name %></h2>
+<div class="container container-contain mt-5">
+  <h2 class='title-showpage'> List of Activities for <%= @category.name %></h2>
+      <div class='container-form d-flex justify-content-end'>
+        <div id="form-cate"  class="container-search-banner">
+        <p>Go Here!</p>
+          <div class="form">
+            <%= simple_form_for :query_id , url: categories_path, method: :get do |f| %>
+               <div class="form-infos d-flex align-items-center">
+                <%= f.input :categories, :collection => @categories.all.map(&:name), label: false %>
+                <%= f.button :submit, 'Search' %>
+              </div>
+      </div>
+          <% end %>
+        </div>
+    </div>
   <div class='main-container'>
     <div class='cards-products'>
       
@@ -7,10 +20,13 @@
         
           
             <div class="card-product">
-              <img src="../assets/images/ferrari.jpg" />
+              <%=cl_image_tag activity.photos.first.key%>
                 <div class="card-product-infos">
                   <h2><%= link_to activity.name.capitalize, activity_path(activity) %></h2>
-                  <p> <strong><%=activity.address.capitalize%></strong > <span class='card-product-infos-price'>Price <%=activity.price%>€</span></p>
+                  <p class='w-200'> 
+                  <strong class='text-wrap'><%=activity.description.capitalize%></strong > 
+                  </p>
+                  <span class='card-product-infos-price'><strong>Price</strong> <strong><%=activity.price%></strong>€</span>
                 </div>
             </div>    
        

@@ -1,8 +1,14 @@
 .container-profile {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "banner banner"
+    "left right"
+    "bottom bottom";
   padding: 1em 0;
   gap: 1em;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .activities,
@@ -10,7 +16,84 @@
   border-radius: 5px;
   border: 1px solid lightgrey;
   padding: 1em 1em;
+  background-color: $white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   width: 100%;
   margin-bottom: 1em;
+  & .activities {
+    grid-area: left;
+
+  }
+  & .bookings {
+    grid-area: right;
+  }
 }
+
+.user-info {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 1em 1em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 1em;
+  grid-area: bottom;
+  max-height: 50vh;
+  & p {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.banner-profile {
+  grid-area: banner;
+  height: 20rem;
+  border-radius: 5px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  & .profile-info {
+    background: $white;
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom:0;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+  } & .avatar-large {
+    position: absolute;
+    top: -30px;
+    left: 1em;
+  }
+}
+
+.profile-info {
+  height: 100px;
+}
+
+.profile-details {
+  padding: 0.4em 0;
+  padding-left: 4.6em;
+  & p {
+    margin-bottom: 10px;
+  }
+}
+
+.square-for {
+  background: rgba(101,142,156, 0.2);
+  border-radius: 5px;
+  padding: 1em 1em;
+  & a {
+    color: $white;
+    font-size: 1.5em;
+  }
+}
+
+.square-for a:hover {
+  text-decoration: none;
+}
+
+.comment-profile {
+  margin: 1em 0;
+}
+
+
+
