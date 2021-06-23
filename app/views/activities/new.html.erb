@@ -1,5 +1,6 @@
-<div class="container mt-5">
+<div class="container mt-2">
   <div class="container-login">
+    <h2 class="text-center pb-3">What do you want to rent?</h2>
     <div class="user-login-signup">
       <%= simple_form_for(@activity) do |f| %>
         <%= f.input :name %>
@@ -7,6 +8,7 @@
         <%= f.input :description %>
         <%= f.input :address %>
         <%= f.input :price, label: "Price in €"%>
+        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.submit %>
       <% end %>
     </div>

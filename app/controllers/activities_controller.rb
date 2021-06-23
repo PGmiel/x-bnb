@@ -5,22 +5,22 @@ class ActivitiesController < ApplicationController
 
   def index
 
-    if params[:category]
-      # @activities = Activity.where(category_id: params[:category])
-      @activities = CategoryActivity.where(category_id: params[:category]).map{ |category_activity| category_activity.activity }
-    else
+    # if params[:category]
+    #   # @activities = Activity.where(category_id: params[:category])
+    #   @activities = CategoryActivity.where(category_id: params[:category]).map{ |category_activity| category_activity.activity }
+    # else
       @activities = Activity.all
-    end
+    # end
      @markers = @activities.geocoded.map do |activity|
         {
           lat: activity.latitude,
           lng: activity.longitude
         }
       end
-
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -30,9 +30,8 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.user = current_user
-    @activity.save
-    # no need for app/views/activitys/create.html.erb
-    redirect_to activity_path(@activity)
+    @activity.save!
+    redirect_to user_activities_path
   end
 
   def edit
@@ -48,7 +47,9 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
-    redirect_to user_activities_path
+
+    # no need for app/views/activities/destroy.html.erb
+    redirect_to activities_path
   end
 
   def user_activities
@@ -57,7 +58,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :description, :address, :price, category_ids: [])
+    params.require(:activity).permit(:name, :description, :address, :price, category_ids: [], photos: [])
   end
 
   def set_activity

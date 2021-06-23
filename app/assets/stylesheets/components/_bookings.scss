@@ -1,0 +1,9 @@
+.flex-bookings {
+  display: grid;
+  grid-auto-flow: row;
+  padding: 1em 0;
+  align-items:center;
+  & h5 {
+    margin: 0;
+  }
+}

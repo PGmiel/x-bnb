@@ -1,15 +1,22 @@
 .main-container {
   display: grid;
   grid-template-columns: 1fr 500px;
+  margin-left: 20px;
 }
 
-.mapboxgl-canvas {
-  padding: 20px;
-  margin: 10px;
+.container-form {
+  position: sticky;
+  top: 90px;
 }
 
-.mapboxgl-popup {
-  max-width: 200px;
+.container-contain {
+  margin: 0 100px !important;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 800px;
+  margin-bottom: 10px;
 }
 
 .mapboxgl-popup-content {
@@ -17,16 +24,19 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.mapboxgl-canvas {
+  margin-top: 22px;
+}
+
 #map {
   padding: 16px;
-  height: 200vh;
-  width: 100vh;
   position: sticky;
-  top: 90px;
+  top: 150px;
+  
 }
 
 
-@media (max-width: 100px) and (max-width: 575px) {
+@media(max-width: 100px) and (max-width: 575px) {
   .cards-product {
     grid-template-columns: 1fr;
   }
@@ -44,7 +54,7 @@
   }
 }
 
-@media (min-width: 1200px){
+@media(min-width: 1200px){
   .cards-product {
     grid-template-columns: 1fr 1fr;
   }
