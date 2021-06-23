@@ -1,5 +1,20 @@
-.mapboxgl-popup {
-  max-width: 200px;
+#form-cate {
+  margin-left: 20px;
+}
+
+.container-form {
+  position: sticky;
+  top: 90px;
+}
+
+.container-contain {
+  margin: 0 100px !important;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 800px;
+  margin-bottom: 10px;
 }
 
 .mapboxgl-popup-content {
@@ -7,10 +22,41 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-#map {
-  padding: 20px;
-  height: 100vh;
-  position: sticky;
-  top: 0;
+.mapboxgl-canvas {
+  margin-top: 22px;
 }
 
+#map {
+  padding: 16px;
+  position: sticky;
+  top: 150px;
+  
+}
+
+
+@media(max-width: 100px) and (max-width: 575px) {
+  .cards-product {
+    grid-template-columns: 1fr;
+  }
+  #map {
+    display: none;
+  }
+}
+
+@media(max-width: 992px) {
+  .cards-product {
+    grid-template-columns: 1fr 1fr;
+  }
+  #map {
+    display: none;
+  }
+}
+
+@media(min-width: 1200px){
+  .cards-product {
+    grid-template-columns: 1fr 1fr;
+  }
+    #map {
+      display: block;
+    }
+  }

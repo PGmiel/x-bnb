@@ -1,37 +1,47 @@
 .container-comments {
   padding: 0 3em;
-  background: black;
+  background: $dark-blue;
   & h1{
-    color: white;
-    padding-top: 1em;
+    color: $white;
+    padding: 0.5em 0;
+    margin-bottom: 0;
   }
 }
 
 .comment-image {
   height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  overflow: hidden;
   border-radius: 12px;
 }
 
 .comment {
   height: 200px;
-  background: black !important;
-  color: black;
+  background: $dark-blue !important;
+  color: $dark-blue;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   transition: 0.5s;
-  opacity: 1;
+  opacity: 0.5;
   & h2 {
     font-size: 1.5em;
+    color: white;
   }
   &:hover {
-    background: black !important;
-    color: white;
+    opacity: 1;
+  }
+}
+
+.comment-profile {
+  color: $dark-blue;
+  display: grid;
+  margin-top: 2em;
+  grid-template-columns: repeat(1fr, 1fr);
+  gap: 1em;
+  justify-content: space-around;
+  align-items: center;
+  & h2 {
+    margin: 0;
+    font-size: 1em;
   }
 }

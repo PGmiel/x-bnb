@@ -1,12 +1,29 @@
 .card {
   overflow: hidden;
-  background: white;
+  background: $white;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-top: 2em;
   // width: clamp(20ch, 50%, 40ch);
   // max-width:
   border-radius: 5px;
   border: none;
+  position: relative;
+  text-align: center;
+  background-color: linear-gradient(
+    rgba(0,0,0,0.1),
+    rgba(0,0,0,0.1)
+    );
+  & .cat-btn {
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40vw;
+    transform: translate(-50%, -50%);
+    color: $white;
+    font-size: 1.8em;
+    transition: 0.2s;
+  }
 }
 
 .card > img {
@@ -19,6 +36,7 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  position: absolute;
 }
 
 .card p {
@@ -35,36 +53,118 @@
   position: relative;
 }
 
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  margin: 5px;
-}
-
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 280px;
+
   object-fit: cover;
 }
 
 .card-product h2 {
+  margin: 0;
+  margin-top: 12px;
+  position: absolute;
+  top: -80px;
+  left: 10px;
+  font-size: 25px;
+}
+
+.card-product p {
+  font-size: 10px;
+  width: 150px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  position: absolute;
+  top: -25px;
+}
+
+.card-product .card-product-infos {
+  padding: 20px;
+  position: relative;
+  color: $dark-blue;
+}
+
+.card-product {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  width: 500px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  color: $white;
+  font-weight: bolder;
+  overflow: hidden;
+  background: $white;
+  margin: 5px;
+  position: relative;
+}
+
+.card-product .card-product-infos .card-product-infos-price {
+  position: absolute;
+  bottom: -20px;
+  right: -220px;
+  width: 40px;
+  font-size: 15px;
+
+}
+
+.cards-products {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding:  16px;
+  flex-grow: 1;
+}
+
+.card-trip {
+  overflow: hidden;
+  background: $white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 100%;
+  width: 100%;
+}
+
+.card-trip img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
+
+.card-trip p {
   font-size: 12px;
-  line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin: 0;
 }
 
-.card-product .card-product-infos {
+
+.card-trip .card-trip-infos {
   padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 13px;
+  top: -13px;
+  height: 50%;
+  width: 20%;
+}
+
+.title-showpage {
+  padding: 20px;
 }

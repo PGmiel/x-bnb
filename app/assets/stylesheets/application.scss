@@ -16,6 +16,27 @@
 @import 'select2/dist/css/select2';
 
 body {
-  background-color: white;
+  background-color: $background-color !important;
+  padding-top: 70px;
+}
+
+h2, h3, h5 {
+  color: $dark-blue;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+h5 {
+  font-weight: 700px;
+}
+
+p {
+  color: $gray;
+}
+
+a {
+  color: $gray-blue !important;
 }
 
